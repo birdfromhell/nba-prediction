@@ -81,7 +81,8 @@ class MatchDataProcessor:
         'espn.com': 4,
         'basketball-reference.com': 4,
         'aiscore.com': 3,
-        'landofbasketball.com': 3
+        'landofbasketball.com': 3,
+        'sofascore.com'
     }
 
     @staticmethod
@@ -229,30 +230,7 @@ class PredictionGenerator:
 
 DATA PERTANDINGAN:
 {match_data}
-
-INSTRUKSI ANALISIS:
-1. Head-to-Head Record:
-   - Rekor pertemuan langsung
-   - Tren hasil pertandingan terakhir
-
-2. Performa Terkini:
-   - Statistik 5 pertandingan terakhir
-   - Momentum tim
-   - Cedera pemain kunci (jika ada)
-
-3. Faktor-Faktor Kritis:
-   - Keunggulan/kelemahan matchup
-   - Faktor kandang/tandang
-   - Rotasi pemain
-   - Strategi permainan
-
-4. Prediksi:
-   - Proyeksi skor
-   - Tim yang diunggulkan
-   - Faktor penentu kemenangan
-   - Tingkat keyakinan prediksi
-
-Berikan analisis yang objektif dan terperinci berdasarkan data yang tersedia."""
+"""
 
     def _truncate_prompt(self, prompt: str) -> str:
         """Truncate prompt to fit within context length while maintaining coherence"""

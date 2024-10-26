@@ -1,0 +1,260 @@
+2024-10-26 06:08:59,113 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 06:08:59,113 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 06:09:02,251 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:09:02] "GET / HTTP/1.1" 200 -
+2024-10-26 06:09:05,064 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:09:05] "POST / HTTP/1.1" 200 -
+2024-10-26 06:09:09,781 - app - ERROR - Error in route handler: name 'get_nba_schedule' is not defined
+2024-10-26 06:09:09,782 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:09:09] "POST / HTTP/1.1" 200 -
+2024-10-26 06:10:58,456 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 06:10:58,456 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 06:11:02,242 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:11:02] "GET / HTTP/1.1" 200 -
+2024-10-26 06:11:03,986 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:11:03] "POST / HTTP/1.1" 200 -
+2024-10-26 06:11:09,202 - app - INFO - Successfully fetched NBA schedule for 2024-10-31
+2024-10-26 06:11:09,203 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:11:09] "POST / HTTP/1.1" 200 -
+2024-10-26 06:11:18,023 - app - ERROR - Error in route handler: POE_TOKEN not found in environment variables
+2024-10-26 06:11:18,023 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:11:18] "POST / HTTP/1.1" 200 -
+2024-10-26 06:14:59,091 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 06:14:59,091 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 06:15:02,913 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:15:02] "GET / HTTP/1.1" 200 -
+2024-10-26 06:15:06,547 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:15:06] "POST / HTTP/1.1" 200 -
+2024-10-26 06:15:11,628 - app - INFO - Successfully fetched NBA schedule for 2024-10-19
+2024-10-26 06:15:11,629 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:15:11] "POST / HTTP/1.1" 200 -
+2024-10-26 06:15:16,517 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 06:15:16,611 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 06:15:16,656 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 06:15:16,717 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 06:15:16,722 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 06:15:16,722 - app - ERROR - Error generating prediction: object of type 'NoneType' has no len()
+2024-10-26 06:15:16,723 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 06:15:16] "POST / HTTP/1.1" 200 -
+2024-10-26 07:10:52,457 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:10:52,460 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:10:59,367 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:10:59] "GET / HTTP/1.1" 200 -
+2024-10-26 07:11:02,336 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:11:02] "POST / HTTP/1.1" 200 -
+2024-10-26 07:11:08,686 - app - INFO - Successfully fetched NBA schedule for 2024-10-31
+2024-10-26 07:11:08,687 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:11:08] "POST / HTTP/1.1" 200 -
+2024-10-26 07:11:11,649 - app - ERROR - Unexpected error: name 'MatchDataProcessor' is not defined
+2024-10-26 07:11:11,650 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:11:11] "POST / HTTP/1.1" 200 -
+2024-10-26 07:12:38,618 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:12:38,620 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:12:41,804 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:12:41] "GET / HTTP/1.1" 200 -
+2024-10-26 07:12:43,693 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:12:43] "POST / HTTP/1.1" 200 -
+2024-10-26 07:12:50,726 - app - INFO - Successfully fetched NBA schedule for 2024-10-31
+2024-10-26 07:12:50,727 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:12:50] "POST / HTTP/1.1" 200 -
+2024-10-26 07:12:54,732 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:12:54,987 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:12:55,046 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:12:55,096 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:12:55,099 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:12:55,100 - app - ERROR - Error getting Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:12:55,100 - app - ERROR - Attempt 1/3 failed: object of type 'NoneType' has no len()
+2024-10-26 07:13:00,695 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:13:00,755 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:13:00,800 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:13:00,848 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:13:00,851 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:13:00,851 - app - ERROR - Error getting Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:13:00,851 - app - ERROR - Attempt 2/3 failed: object of type 'NoneType' has no len()
+2024-10-26 07:13:06,303 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:13:06,348 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:13:06,396 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:13:06,445 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:13:06,447 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:13:06,447 - app - ERROR - Error getting Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:13:06,448 - app - ERROR - Attempt 3/3 failed: object of type 'NoneType' has no len()
+2024-10-26 07:13:06,448 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:13:06] "POST / HTTP/1.1" 200 -
+2024-10-26 07:14:41,310 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:14:41,310 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:14:44,669 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:14:44] "GET / HTTP/1.1" 200 -
+2024-10-26 07:14:46,499 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:14:46] "POST / HTTP/1.1" 200 -
+2024-10-26 07:14:53,058 - app - INFO - Successfully fetched NBA schedule for 2024-10-24
+2024-10-26 07:14:53,059 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:14:53] "POST / HTTP/1.1" 200 -
+2024-10-26 07:14:59,576 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:14:59,618 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:14:59,666 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:14:59,723 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:14:59,726 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:14:59,726 - app - WARNING - Retry 1/3 initializing client
+2024-10-26 07:15:05,206 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:15:05,243 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:05,278 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:05,338 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:05,341 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:15:05,341 - app - WARNING - Retry 2/3 initializing client
+2024-10-26 07:15:10,761 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:15:10,804 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:10,836 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:10,884 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:10,887 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:15:10,887 - app - ERROR - Attempt 1/3 failed: Failed to initialize client after 3 attempts: object of type 'NoneType' has no len()
+2024-10-26 07:15:16,315 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:15:16,360 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:16,401 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:16,449 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:16,453 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:15:16,454 - app - WARNING - Retry 1/3 initializing client
+2024-10-26 07:15:21,900 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:15:21,944 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:21,973 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:22,022 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:22,025 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:15:22,025 - app - WARNING - Retry 2/3 initializing client
+2024-10-26 07:15:27,535 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:15:27,576 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:27,610 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:27,673 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:27,676 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:15:27,676 - app - ERROR - Attempt 2/3 failed: Failed to initialize client after 3 attempts: object of type 'NoneType' has no len()
+2024-10-26 07:15:33,236 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:15:33,293 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:33,327 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:33,372 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:15:33,376 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:15:33,376 - app - WARNING - Retry 1/3 initializing client
+2024-10-26 07:18:21,132 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:18:21,132 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:18:24,312 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:18:24] "GET / HTTP/1.1" 200 -
+2024-10-26 07:18:25,914 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:18:25] "POST / HTTP/1.1" 200 -
+2024-10-26 07:18:32,008 - app - INFO - Successfully fetched NBA schedule for 2024-10-30
+2024-10-26 07:18:32,009 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:18:32] "POST / HTTP/1.1" 200 -
+2024-10-26 07:18:36,007 - app - ERROR - Failed to initialize Poe client: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:18:36,007 - app - WARNING - Retry 1/3 initializing client
+2024-10-26 07:18:41,008 - app - ERROR - Failed to initialize Poe client: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:18:41,008 - app - WARNING - Retry 2/3 initializing client
+2024-10-26 07:18:46,009 - app - ERROR - Failed to initialize Poe client: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:18:46,009 - app - ERROR - Failed to initialize client after 3 attempts
+2024-10-26 07:18:46,009 - app - ERROR - Attempt 1/3 failed: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:18:51,015 - app - ERROR - Failed to initialize Poe client: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:18:51,015 - app - WARNING - Retry 1/3 initializing client
+2024-10-26 07:18:56,016 - app - ERROR - Failed to initialize Poe client: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:18:56,016 - app - WARNING - Retry 2/3 initializing client
+2024-10-26 07:19:01,017 - app - ERROR - Failed to initialize Poe client: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:19:01,017 - app - ERROR - Failed to initialize client after 3 attempts
+2024-10-26 07:19:01,017 - app - ERROR - Attempt 2/3 failed: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:19:06,023 - app - ERROR - Failed to initialize Poe client: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:19:06,023 - app - WARNING - Retry 1/3 initializing client
+2024-10-26 07:19:11,024 - app - ERROR - Failed to initialize Poe client: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:19:11,024 - app - WARNING - Retry 2/3 initializing client
+2024-10-26 07:19:16,025 - app - ERROR - Failed to initialize Poe client: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:19:16,025 - app - ERROR - Failed to initialize client after 3 attempts
+2024-10-26 07:19:16,025 - app - ERROR - Attempt 3/3 failed: PoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:19:16,026 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:19:16] "POST / HTTP/1.1" 200 -
+2024-10-26 07:19:31,954 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:19:31,954 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:19:33,980 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:19:33] "GET / HTTP/1.1" 200 -
+2024-10-26 07:19:36,897 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:19:36] "POST / HTTP/1.1" 200 -
+2024-10-26 07:19:42,424 - app - INFO - Successfully fetched NBA schedule for 2024-10-17
+2024-10-26 07:19:42,425 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:19:42] "POST / HTTP/1.1" 200 -
+2024-10-26 07:19:46,199 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:19:46,288 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:19:46,335 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:19:46,390 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:19:46,393 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:19:46,393 - app - ERROR - Error generating prediction: object of type 'NoneType' has no len()
+2024-10-26 07:19:46,393 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:19:46] "POST / HTTP/1.1" 200 -
+2024-10-26 07:29:44,811 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:29:44,811 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:29:46,907 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:29:46] "GET / HTTP/1.1" 200 -
+2024-10-26 07:29:48,692 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:29:48] "POST / HTTP/1.1" 200 -
+2024-10-26 07:29:55,009 - app - INFO - Successfully fetched NBA schedule for 2024-10-27
+2024-10-26 07:29:55,011 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:29:55] "POST / HTTP/1.1" 200 -
+2024-10-26 07:30:03,585 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:30:03,640 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:30:03,681 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:30:03,725 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:30:03,727 - app - ERROR - Failed to initialize Poe client: object of type 'NoneType' has no len()
+2024-10-26 07:30:03,727 - app - ERROR - Error generating prediction: object of type 'NoneType' has no len()
+2024-10-26 07:30:03,728 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:30:03] "POST / HTTP/1.1" 200 -
+2024-10-26 07:33:17,533 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:33:17,533 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:33:21,087 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:33:21] "GET / HTTP/1.1" 200 -
+2024-10-26 07:33:22,673 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:33:22] "POST / HTTP/1.1" 200 -
+2024-10-26 07:33:28,033 - app - INFO - Successfully fetched NBA schedule for 2024-10-31
+2024-10-26 07:33:28,034 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:33:28] "POST / HTTP/1.1" 200 -
+2024-10-26 07:33:31,714 - app - ERROR - Failed to initialize Poe client: AsyncPoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:33:31,715 - app - ERROR - Error generating prediction: AsyncPoeApi.__init__() got an unexpected keyword argument 'token'
+2024-10-26 07:33:31,716 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:33:31] "POST / HTTP/1.1" 200 -
+2024-10-26 07:38:28,737 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:38:28,737 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:38:31,163 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:38:31] "GET / HTTP/1.1" 200 -
+2024-10-26 07:38:34,945 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:38:34] "POST / HTTP/1.1" 200 -
+2024-10-26 07:38:40,175 - app - INFO - Successfully fetched NBA schedule for 2024-10-29
+2024-10-26 07:38:40,176 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:38:40] "POST / HTTP/1.1" 200 -
+2024-10-26 07:38:44,388 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:38:44,454 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:38:44,493 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:38:44,539 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:38:44,829 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-26 07:38:45,477 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:38:45,999 - websocket - INFO - Websocket connected
+2024-10-26 07:38:46,005 - app - INFO - Poe client initialized successfully
+2024-10-26 07:38:46,338 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:38:47,348 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:38:52,350 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:38:52] "POST / HTTP/1.1" 200 -
+2024-10-26 07:41:46,304 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:41:46,304 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:41:48,850 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:41:48] "GET / HTTP/1.1" 200 -
+2024-10-26 07:41:51,706 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:41:51] "POST / HTTP/1.1" 200 -
+2024-10-26 07:41:57,593 - app - INFO - Successfully fetched NBA schedule for 2024-10-27
+2024-10-26 07:41:57,594 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:41:57] "POST / HTTP/1.1" 200 -
+2024-10-26 07:42:06,335 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:42:06,385 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:42:06,420 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:42:06,465 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:42:06,757 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-26 07:42:07,443 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:42:07,950 - websocket - INFO - Websocket connected
+2024-10-26 07:42:07,961 - app - INFO - Poe client initialized successfully
+2024-10-26 07:42:08,419 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:42:12,507 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:42:20,485 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:42:20] "POST / HTTP/1.1" 200 -
+2024-10-26 07:44:47,894 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:44:47,894 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:44:50,983 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:44:50] "GET / HTTP/1.1" 200 -
+2024-10-26 07:44:57,842 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:44:57] "POST / HTTP/1.1" 200 -
+2024-10-26 07:45:03,234 - app - INFO - Successfully fetched NBA schedule for 2024-10-27
+2024-10-26 07:45:03,235 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:45:03] "POST / HTTP/1.1" 200 -
+2024-10-26 07:45:39,827 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:45:40,073 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:45:40,111 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:45:40,162 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:45:40,428 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-26 07:45:41,168 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:45:41,828 - websocket - INFO - Websocket connected
+2024-10-26 07:45:41,829 - app - INFO - Poe client initialized successfully
+2024-10-26 07:45:42,264 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:45:49,286 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:45:55,519 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:45:55] "POST / HTTP/1.1" 200 -
+2024-10-26 07:48:41,195 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-26 07:48:41,195 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-26 07:48:43,561 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:48:43] "GET / HTTP/1.1" 200 -
+2024-10-26 07:48:45,254 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:48:45] "POST / HTTP/1.1" 200 -
+2024-10-26 07:48:51,127 - app - INFO - Successfully fetched NBA schedule for 2024-10-31
+2024-10-26 07:48:51,128 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:48:51] "POST / HTTP/1.1" 200 -
+2024-10-26 07:48:55,430 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-26 07:48:55,480 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-dbf78d44b14a833d.js "HTTP/1.1 200 OK"
+2024-10-26 07:48:55,507 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-51b49f53c7a5aad8.js "HTTP/1.1 200 OK"
+2024-10-26 07:48:55,552 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/jC8W6OA5XqJbPTcqeyS5T/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-26 07:48:55,831 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-26 07:48:56,696 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:48:57,197 - websocket - INFO - Websocket connected
+2024-10-26 07:48:57,205 - app - INFO - Poe client initialized successfully
+2024-10-26 07:48:57,643 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:49:04,328 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:49:11,358 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:49:11] "POST / HTTP/1.1" 200 -
+2024-10-26 07:49:59,875 - app - WARNING - Error with primary bot, trying fallback: Sending request HandleBotLandingPageQuery failed.  Error log: RuntimeError('Event loop is closed')
+2024-10-26 07:50:00,287 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-26 07:50:00,288 - app - ERROR - Error generating prediction: 'NoneType' object is not subscriptable
+2024-10-26 07:50:00,288 - werkzeug - INFO - 127.0.0.1 - - [26/Oct/2024 07:50:00] "POST / HTTP/1.1" 200 -

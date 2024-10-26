@@ -1,246 +1,430 @@
-# app.py
-
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
+from functools import lru_cache
 import requests
 from poe_api_wrapper import AsyncPoeApi
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
+import asyncio
+import logging
+from ratelimit import limits, sleep_and_retry
+import os
+from dotenv import load_dotenv
+from typing import Optional, Dict, List, Any
+import time
+
+# Load environment variables
+load_dotenv()
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('app.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-def get_nba_schedule(date):
-    """
-    Get NBA schedule from the API for a specific date
-    """
+# Configuration
+class Config:
+    NBA_API_KEY = os.getenv('NBA_API_KEY', 'fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3')
+    SEARCH_API_KEY = os.getenv('SEARCH_API_KEY', 'fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3')
+    POE_TOKEN = {
+        'p-b': 'eGjrO4GcgvQgEtlDUYtUYQ%3D%3D', 
+        'p-lat': 't9icW9X07GI7GxMfOo5mNkEyZ8252EjVI7fkxzZE6A%3D%3D',
+    }
+    POE_PROXY = os.getenv('POE_PROXY', None)
+    CACHE_TIMEOUT = 3600  # 1 hour
+    CALLS_PER_MINUTE = 30
+    MAX_RETRIES = 3
+    RETRY_DELAY = 5  # seconds
+
+class APIError(Exception):
+    """Custom exception for API related errors"""
+    pass
+
+# Rate limiting decorators
+@sleep_and_retry
+@limits(calls=Config.CALLS_PER_MINUTE, period=60)
+def rate_limited_api_call(url: str, headers: Dict, params: Dict) -> requests.Response:
+    """Make a rate-limited API call"""
+    response = requests.get(url, headers=headers, params=params, timeout=10)
+    if response.status_code != 200:
+        raise APIError(f"API call failed with status {response.status_code}")
+    return response
+
+@lru_cache(maxsize=128)
+def get_nba_schedule(date: str) -> Optional[Dict]:
+    """Get NBA schedule from the API for a specific date with caching"""
     url = "https://api-nba-v1.p.rapidapi.com/games"
-    querystring = {"date": date}
     headers = {
-        "x-rapidapi-key": "fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3",
+        "x-rapidapi-key": Config.NBA_API_KEY,
         "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
     }
+    
     try:
-        response = requests.get(url, headers=headers, params=querystring)
-        print(f"Schedule API Response Status: {response.status_code}")
-        return response.json() if response.status_code == 200 else None
-    except Exception as e:
-        print(f"Error fetching NBA schedule: {e}")
+        response = rate_limited_api_call(url, headers=headers, params={"date": date})
+        logger.info(f"Successfully fetched NBA schedule for {date}")
+        return response.json()
+    except (requests.RequestException, APIError) as e:
+        logger.error(f"Error fetching NBA schedule: {str(e)}")
         return None
 
-def get_match_data(teams, num_results=10):
-    """
-    Get match data and process the API response to extract relevant information.
-    Returns structured match data and relevant URLs.
-    """
-    url = "https://real-time-web-search.p.rapidapi.com/search"
-    querystring = {
-        "q": f"{teams} NBA match statistics head to head",
-        "limit": str(num_results)
-    }
+class MatchDataProcessor:
+    """Class to handle match data processing"""
     
-    headers = {
-        "x-rapidapi-key": "fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3",
-        "x-rapidapi-host": "real-time-web-search.p.rapidapi.com"
+    PRIORITY_DOMAINS = {
+        'nba.com': 5,
+        'espn.com': 4,
+        'basketball-reference.com': 4,
+        'aiscore.com': 3,
+        'landofbasketball.com': 3
     }
 
-    try:
-        response = requests.get(url, headers=headers, params=querystring, timeout=10)
-        print(f"Search API Response Status: {response.status_code}")
-        print(f"Search Query: {teams}")
-        
-        if response.status_code == 200:
+    @staticmethod
+    @lru_cache(maxsize=64)
+    def get_match_data(teams: str, num_results: int = 25) -> str:  # Increased from 10 to 25 to ensure enough quality results
+        """Get match data from web search API with caching"""
+        url = "https://real-time-web-search.p.rapidapi.com/search"
+        headers = {
+            "x-rapidapi-key": Config.SEARCH_API_KEY,
+            "x-rapidapi-host": "real-time-web-search.p.rapidapi.com"
+        }
+        params = {
+            "q": f"{teams} NBA match statistics",
+            "limit": str(num_results)  # Fetch more results initially
+        }
+
+        try:
+            response = rate_limited_api_call(url, headers=headers, params=params)
             data = response.json()
-            print(f"Raw API Response: {json.dumps(data, indent=2)}")
             
             if data.get("status") == "OK" and "data" in data:
-                # Prioritize certain domains for better statistics
-                priority_domains = {
-                    'nba.com': 5,
-                    'espn.com': 4,
-                    'basketball-reference.com': 4,
-                    'aiscore.com': 3,
-                    'landofbasketball.com': 3,
-                    'sportsbettingdime.com': 2,
-                    'flashscore.com': 2,
-                    'sofascrore.com': 2,
-                }
-                
-                # Extract and structure the information
-                match_info = []
-                for item in data['data']:
-                    domain = item.get('domain', '')
-                    priority = 0
-                    
-                    # Assign priority based on domain
-                    for key_domain, value in priority_domains.items():
-                        if key_domain in domain:
-                            priority = value
-                            break
-                    
-                    # Only include items with snippets
-                    if item.get('snippet'):
-                        match_info.append({
-                            'title': item.get('title', '').strip(),
-                            'snippet': item.get('snippet', '').strip(),
-                            'url': item.get('url', ''),
-                            'domain': domain,
-                            'priority': priority
-                        })
-                
-                # Sort by priority (higher first)
-                match_info.sort(key=lambda x: x['priority'], reverse=True)
-                
-                # Create context string from the collected data
-                context_data = f"Data Pertandingan {teams}:\n\n"
-                
-                # Add structured information from snippets
-                for info in match_info:
-                    if info['priority'] > 0:  # Only include from priority domains
-                        context_data += f"Sumber: {info['domain']}\n"
-                        context_data += f"Judul: {info['title']}\n"
-                        context_data += f"Informasi: {info['snippet']}\n"
-                        context_data += f"URL: {info['url']}\n\n"
-                
-                # Add summary statistics if available
-                summary_stats = extract_summary_stats(match_info)
-                if summary_stats:
-                    context_data += "\nStatistik Ringkas:\n"
-                    context_data += summary_stats
-                
-                return context_data
-            else:
-                print("API response tidak sesuai format yang diharapkan")
-                return f"Tidak dapat menemukan data spesifik untuk pertandingan {teams}. Menggunakan analisis umum."
-                
-        else:
-            print(f"API request gagal dengan status code: {response.status_code}")
-            return f"Gagal mendapatkan data untuk pertandingan {teams}. Menggunakan analisis umum."
+                return MatchDataProcessor.process_match_data(data['data'], teams)
             
-    except Exception as e:
-        print(f"Error saat mengambil data pertandingan: {e}")
-        return f"Terjadi kesalahan saat mengambil data {teams}. Menggunakan analisis umum."
+            logger.warning(f"No data found for match: {teams}")
+            return f"Tidak dapat menemukan data spesifik untuk pertandingan {teams}."
+            
+        except Exception as e:
+            logger.error(f"Error fetching match data: {str(e)}")
+            return f"Terjadi kesalahan saat mengambil data {teams}."
 
-def extract_summary_stats(match_info):
-    """
-    Extract and summarize statistics from match information
-    """
-    try:
-        stats = []
-        for info in match_info:
-            snippet = info['snippet'].lower()
-            
-            # Extract scoring statistics
-            if 'ppg' in snippet:
-                ppg_stats = snippet.split('ppg')
-                for stat in ppg_stats:
-                    if any(char.isdigit() for char in stat):
-                        stats.append(f"PPG: {stat.strip()}")
-            
-            # Extract win/loss records
-            if 'won' in snippet and any(char.isdigit() for char in snippet):
-                win_stats = snippet.split('won')
-                for stat in win_stats:
-                    if any(char.isdigit() for char in stat):
-                        stats.append(f"Wins: {stat.strip()}")
+    @staticmethod
+    def process_match_data(search_results: List[Dict], teams: str) -> str:
+        """Process search results with improved relevance scoring"""
+        match_info = []
+        seen_urls = set()  # Track unique URLs to avoid duplicates
         
-        if stats:
-            return "\n".join(stats)
-        return ""
+        for item in search_results:
+            # Skip if URL is already processed
+            url = item.get('url', '').strip()
+            if not url or url in seen_urls:
+                continue
+                
+            domain = item.get('domain', '')
+            priority = next(
+                (value for key, value in MatchDataProcessor.PRIORITY_DOMAINS.items() 
+                 if key in domain), 0
+            )
+            
+            if item.get('snippet'):
+                relevance_score = MatchDataProcessor.calculate_relevance_score(
+                    item.get('title', ''),
+                    item.get('snippet', ''),
+                    teams,
+                    priority
+                )
+                
+                match_info.append({
+                    'url': url,
+                    'snippet': item.get('snippet', '').strip(),
+                    'relevance_score': relevance_score
+                })
+                seen_urls.add(url)
+
+        # Sort by relevance score
+        match_info.sort(key=lambda x: x['relevance_score'], reverse=True)
+        return MatchDataProcessor.format_match_data(match_info[:15], teams)  # Take top 15 results
+
+    @staticmethod
+    def calculate_relevance_score(title: str, snippet: str, teams: str, priority: int) -> float:
+        """Calculate relevance score based on content and priority"""
+        score = priority * 2.0
         
-    except Exception as e:
-        print(f"Error extracting summary stats: {e}")
-        return ""
+        team_names = teams.lower().split()
+        content = (title + " " + snippet).lower()
+        for team in team_names:
+            if team in content:
+                score += 1.0
+
+        if any(str(year) in snippet for year in range(datetime.now().year-1, datetime.now().year+1)):
+            score += 2.0
+
+        return score
+
+    @staticmethod
+    def format_match_data(match_info: List[Dict], teams: str) -> str:
+        """Format match data into readable content with 15 URLs"""
+        context = f"Data Pertandingan {teams}:\n\n"
+        
+        # Number each URL for better readability
+        for i, info in enumerate(match_info, 1):
+            context += f"{i}. {info['url']}\n"
+            context += f"   {info['snippet']}\n\n"
+            
+        return context
+
+class PoeClientManager:
+    _instance = None
+    _client = None
+    _last_init_time = None
+    _tokens = None
+    
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(PoeClientManager, cls).__new__(cls)
+        return cls._instance
+    
+    def __init__(self):
+        if not self._tokens:
+            self._tokens = Config.POE_TOKEN
+            if not self._tokens.get('p-b') or not self._tokens.get('p-lat'):
+                raise ValueError("POE tokens not found or invalid")
+    
+    async def _initialize_client(self):
+        try:
+            self._client = await AsyncPoeApi(tokens=self._tokens).create()
+            self._last_init_time = time.time()
+            logger.info("Poe client initialized successfully")
+        except Exception as e:
+            logger.error(f"Failed to initialize Poe client: {str(e)}")
+            raise
+
+    async def get_client(self):
+        current_time = time.time()
+        
+        if (not self._client or 
+            not self._last_init_time or 
+            current_time - self._last_init_time > 3600):
+            await self._initialize_client()
+        
+        return self._client
+
+class PredictionGenerator:
+    """Class to handle prediction generation using Poe API"""
+    
+    def __init__(self):
+        self.poe_manager = PoeClientManager()
+        self.default_bot = "claude-instant"
+        self.fallback_bot = "sage"
+        self.max_context_length = 2000
+
+    @staticmethod
+    def create_prediction_prompt(match_data: str, teams: str) -> str:
+        """Create an enhanced structured prompt for the AI"""
+        return f"""Analisis Prediksi NBA: {teams}
+
+DATA PERTANDINGAN:
+{match_data}
+
+INSTRUKSI ANALISIS:
+1. Head-to-Head Record:
+   - Rekor pertemuan langsung
+   - Tren hasil pertandingan terakhir
+
+2. Performa Terkini:
+   - Statistik 5 pertandingan terakhir
+   - Momentum tim
+   - Cedera pemain kunci (jika ada)
+
+3. Faktor-Faktor Kritis:
+   - Keunggulan/kelemahan matchup
+   - Faktor kandang/tandang
+   - Rotasi pemain
+   - Strategi permainan
+
+4. Prediksi:
+   - Proyeksi skor
+   - Tim yang diunggulkan
+   - Faktor penentu kemenangan
+   - Tingkat keyakinan prediksi
+
+Berikan analisis yang objektif dan terperinci berdasarkan data yang tersedia."""
+
+    def _truncate_prompt(self, prompt: str) -> str:
+        """Truncate prompt to fit within context length while maintaining coherence"""
+        if len(prompt) > self.max_context_length:
+            truncated = prompt[:self.max_context_length]
+            last_period = truncated.rfind('.')
+            if last_period > 0:
+                truncated = truncated[:last_period + 1]
+            return truncated
+        return prompt
+
+    def _format_response(self, response: str) -> str:
+        """Format the AI response for better readability"""
+        # Remove multiple consecutive newlines
+        formatted = '\n'.join(line for line in response.splitlines() if line.strip())
+        
+        # Add consistent spacing after sections
+        formatted = formatted.replace('# ', '\n# ')
+        formatted = formatted.replace('## ', '\n## ')
+        
+        # Ensure bullet points are properly aligned
+        lines = formatted.splitlines()
+        formatted_lines = []
+        for line in lines:
+            if line.strip().startswith('•'):
+                formatted_lines.append('  ' + line.strip())
+            elif line.strip().startswith('-'):
+                formatted_lines.append(line.strip())
+            else:
+                formatted_lines.append(line)
+        
+        return '\n'.join(formatted_lines)
+
+    @staticmethod
+    def handle_rate_limit(func):
+        """Decorator to handle rate limiting and retries"""
+        async def wrapper(*args, **kwargs):
+            retries = 0
+            while retries < Config.MAX_RETRIES:
+                try:
+                    return await func(*args, **kwargs)
+                except Exception as e:
+                    if "rate" in str(e).lower():
+                        retries += 1
+                        if retries < Config.MAX_RETRIES:
+                            logger.warning(f"Rate limit hit, waiting {Config.RETRY_DELAY} seconds. Retry {retries}/{Config.MAX_RETRIES}")
+                            await asyncio.sleep(Config.RETRY_DELAY)
+                            continue
+                    raise
+            return None
+        return wrapper
+
+    @handle_rate_limit
+    async def get_prediction(self, match_data: str, teams: str) -> str:
+        """Get prediction from AI with error handling and retry logic"""
+        try:
+            client = await self.poe_manager.get_client()
+            prompt = self.create_prediction_prompt(match_data, teams)
+            prompt = self._truncate_prompt(prompt)
+
+            try:
+                response_text = ""
+                async for chunk in client.send_message(
+                    bot=self.default_bot,
+                    message=prompt
+                ):
+                    if chunk.get("response"):
+                        response_text += chunk["response"]
+                
+                # Format the response before returning
+                return self._format_response(response_text)
+
+            except Exception as e:
+                logger.warning(f"Error with primary bot, trying fallback: {str(e)}")
+                response_text = ""
+                async for chunk in client.send_message(
+                    bot=self.fallback_bot,
+                    message=prompt
+                ):
+                    if chunk.get("response"):
+                        response_text += chunk["response"]
+                
+                # Format the response before returning
+                return self._format_response(response_text)
+
+        except Exception as e:
+            logger.error(f"Error generating prediction: {str(e)}")
+            return "Maaf, terjadi kesalahan saat menghasilkan prediksi. Silakan coba lagi nanti."
+
+    async def get_chat_history(self) -> List[Dict]:
+        """Get chat history for debugging or monitoring"""
+        try:
+            client = await self.poe_manager.get_client()
+            return await client.get_chat_history()
+        except Exception as e:
+            logger.error(f"Error getting chat history: {str(e)}")
+            return []
 
 @app.route("/", methods=["GET", "POST"])
 async def index():
-    schedule = None
-    prediction_result = None
-    start_message = None
-    date_message = None
-    error_message = None
+    """Main route handler with improved error handling and response structure"""
+    response_data = {
+        'schedule': None,
+        'prediction_result': None,
+        'start_message': None,
+        'date_message': None,
+        'error_message': None,
+        'current_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    }
 
     if request.method == "POST":
         try:
             if 'start' in request.form:
-                start_message = "Selamat datang! Silakan masukkan tanggal (YYYY-MM-DD) untuk melihat jadwal pertandingan NBA."
-            
+                response_data['start_message'] = "Selamat datang! Silakan masukkan tanggal (YYYY-MM-DD) untuk melihat jadwal pertandingan NBA."
+
             elif 'date' in request.form:
                 date = request.form.get("date")
                 if date:
-                    date_message = f"Jadwal pertandingan NBA tanggal {date}:"
-                    schedule = get_nba_schedule(date)
-                    if not schedule or not schedule.get('response'):
-                        error_message = "Tidak ada pertandingan pada tanggal tersebut atau terjadi kesalahan mengambil data."
+                    response_data['date_message'] = f"Jadwal pertandingan NBA tanggal {date}:"
+                    response_data['schedule'] = get_nba_schedule(date)
+                    if not response_data['schedule'] or not response_data['schedule'].get('response'):
+                        response_data['error_message'] = "Tidak ada pertandingan pada tanggal tersebut atau terjadi kesalahan mengambil data."
                 else:
-                    error_message = "Mohon masukkan tanggal yang valid."
-            
+                    response_data['error_message'] = "Mohon masukkan tanggal yang valid."
+
             elif 'match_choice' in request.form:
                 user_choice = request.form.get("match_choice")
-                print(f"Processing match: {user_choice}")
-                
-                # Get processed match data
-                context_data = get_match_data(user_choice)
-                print(f"Context data generated: {bool(context_data)}")
-                
-                # Create detailed prompt
-                prompt = f"""Berikan analisis prediksi untuk pertandingan NBA {user_choice} berdasarkan data berikut:
+                match_data = MatchDataProcessor.get_match_data(user_choice)
+                prediction_generator = PredictionGenerator()
+                response_data['prediction_result'] = await prediction_generator.get_prediction(
+                    match_data, user_choice
+                )
 
-{context_data}
-
-Mohon berikan analisis dalam format berikut:
-1. Head-to-Head Record
-2. Performa Terkini Kedua Tim
-3. Statistik Kunci
-4. Faktor Penting (injuries, home/away, dll)
-5. Prediksi dengan Justifikasi
-
-Berikan analisis yang objektif dan detail berdasarkan data di atas.
-"""
-                print("Sending prompt to POE...")
-                
-                # Initialize Poe API client
-                tokens = {
-                    'p-b': 'Xim1r52Px8L0ESP8GawH4w%3D%3D',
-                    'p-lat': 'i%2BWCgz%2FdMa9g6MoX4DjdHrSYU6sDYOoT06Hi8XaHBw%3D%3D',
-                    'formkey': '6afefe7956afbec62bf474bf2b0bc961f9',
-                }
-                client = await AsyncPoeApi(tokens=tokens).create()
-                
-                # Get AI analysis
-                complete_response = ""
-                async for chunk in client.send_message(bot="gemini_pro_search", message=prompt):
-                    complete_response = chunk["response"]
-                
-                prediction_result = complete_response
-                print("Prediction generated successfully")
-                
             elif 'user_prompt' in request.form:
                 user_prompt = request.form.get("user_prompt")
                 if user_prompt:
-                    # Handle user questions here
-                    tokens = {
-                        'p-b': 'IUIM3rd2DL9lIgfr324otg%3D%3D',
-                        'p-lat': 'N41dYMp4bd%2FloCfYAKpTDXq3ZSG3CjWtjXm04dP38A%3D%3D',
-                        'formkey': '6afefe7956afbec62bf474bf2b0bc961f9',
-                    }
-                    client = await AsyncPoeApi(tokens=tokens).create()
-                    
-                    complete_response = ""
-                    async for chunk in client.send_message(bot="gemini_pro_search", message=user_prompt):
-                        complete_response = chunk["response"]
-                    
-                    prediction_result = complete_response
-                
-        except Exception as e:
-            error_message = f"Terjadi kesalahan: {str(e)}"
-            print(f"Error in route handler: {e}")
+                    prediction_generator = PredictionGenerator()
+                    response_data['prediction_result'] = await prediction_generator.get_prediction(
+                        user_prompt, "Custom Query"
+                    )
 
-    return render_template("index.html", 
-                         start_message=start_message, 
-                         date_message=date_message, 
-                         schedule=schedule, 
-                         prediction_result=prediction_result,
-                         error_message=error_message,
-                         current_time=datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        except Exception as e:
+            logger.error(f"Error in route handler: {str(e)}")
+            response_data['error_message'] = f"Terjadi kesalahan: {str(e)}"
+
+    return render_template("index.html", **response_data)
+
+@app.route("/health", methods=["GET"])
+async def health_check():
+    """Health check endpoint"""
+    try:
+        poe_manager = PoeClientManager()
+        client = await poe_manager.get_client()
+        
+        return jsonify({
+            "status": "healthy",
+            "poe_api": "connected",
+            "timestamp": datetime.now().isoformat()
+        }), 200
+    except Exception as e:
+        return jsonify({
+            "status": "unhealthy",
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Run with Hypercorn for async support
+    import hypercorn.asyncio
+    import hypercorn.config
+
+    config = hypercorn.config.Config()
+    config.bind = ["localhost:5000"]
+    asyncio.run(hypercorn.asyncio.serve(app, config))
+

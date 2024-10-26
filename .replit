@@ -1,0 +1,4 @@
+run = "flask run"
+
+[deployment]
+run = ["sh", "-c", "flask run"]

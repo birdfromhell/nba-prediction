@@ -4,43 +4,332 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NBA Prediction Chatbot</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-container {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            margin-bottom: 80px;
+        }
+
+        .message {
+            display: flex;
+            margin-bottom: 1rem;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 90%;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            word-wrap: break-word;
+        }
+
+        .bot .message-content {
+            background: white;
+            border-bottom-left-radius: 0.3rem;
+        }
+
+        .user .message-content {
+            background: #1d428a;
+            color: white;
+            border-bottom-right-radius: 0.3rem;
+        }
+
+        .date-input {
+            background: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .date-input form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .date-input input[type="date"] {
+            padding: 0.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 0.5rem;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .match-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .match-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .teams {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .team-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .vs {
+            color: #666;
+            font-weight: bold;
+            padding: 0.5rem;
+        }
+
+        .btn {
+            background: #1d428a;
+            color: white;
+            border: none;
+            padding: 0.8rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 0.9rem;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #17336d;
+        }
+
+        .input-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+
+        .input-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 2rem;
+            outline: none;
+            font-size: 16px; /* Prevents zoom on mobile */
+        }
+
+        .timestamp {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive breakpoints */
+        @media (min-width: 768px) {
+            .teams {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .team {
+                flex: 1;
+            }
+
+            .team-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .message-content {
+                max-width: 70%;
+            }
+
+            .date-input form {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        /* Small screen optimizations */
+        @media (max-width: 480px) {
+            .chat-container {
+                padding: 0.5rem;
+            }
+
+            .message-content {
+                padding: 0.8rem;
+            }
+
+            .team span {
+                font-size: 0.9rem;
+            }
+
+            .input-wrapper {
+                padding: 0 0.5rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="header">
-        <div class="header-content">
-            <div class="header-avatar">
-                <i class="fas fa-basketball-ball"></i>
-            </div>
-            <div class="header-title">
-                <h1>NBA Prediction Bot</h1>
-                <p>Active now</p>
-            </div>
-            <div class="header-controls">
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <i class="fas fa-info-circle" style="color: var(--text-color);"></i>
+    <div class="chat-container" id="chatContainer">
+        {% if not start_message and not date_message %}
+        <div class="message bot">
+            <div class="message-content">
+                <form method="POST">
+                    <input type="hidden" name="start" value="true">
+                    <button type="submit" class="btn">Mulai Prediksi</button>
+                </form>
             </div>
         </div>
-    </div>
+        {% endif %}
 
-    
+        {% if start_message %}
+        <div class="message bot">
+            <div class="message-content">
+                {{ start_message }}
+                <div class="date-input">
+                    <form method="POST">
+                        <input type="date" name="date" required>
+                        <button type="submit" class="btn">Lihat Jadwal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if date_message %}
+        <div class="message bot">
+            <div class="message-content">
+                {{ date_message }}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if schedule %}
+        <div class="message bot">
+            <div class="message-content">
+                <div class="match-list">
+                    {% for game in schedule.response %}
+                    <div class="match-item">
+                        <div class="teams">
+                            <div class="team home">
+                                <span>{{ game.teams.home.name }}</span>
+                                <img src="{{ game.teams.home.logo }}" alt="{{ game.teams.home.name }} Logo" class="team-logo">
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team away">
+                                <img src="{{ game.teams.visitors.logo }}" alt="{{ game.teams.visitors.name }} Logo" class="team-logo">
+                                <span>{{ game.teams.visitors.name }}</span>
+                            </div>
+                        </div>
+                        <form method="POST">
+                            <input type="hidden" name="match_choice" value="{{ game.teams.home.name }} vs {{ game.teams.visitors.name }}">
+                            <button type="submit" class="btn">Dapatkan Prediksi</button>
+                        </form>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if prediction_result %}
+        <div class="message bot">
+            <div class="message-content">
+                {{ prediction_result }}
+                <div class="timestamp">{{ current_time }}</div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
 
     <div class="input-container">
         <div class="input-wrapper">
-            <form method="POST" style="display: flex; width: 100%; gap: 0.8rem;">
-                <div class="message-input">
-                    <input type="text" name="user_prompt" placeholder="Message..." required>
-                </div>
-                <button type="submit" class="send-button">
+            <form method="POST">
+                <input type="text" name="user_prompt" placeholder="Tanyakan sesuatu..." required>
+                <button type="submit" class="btn">
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </form>
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // Auto scroll to bottom
+        function scrollToBottom() {
+            const container = document.getElementById('chatContainer');
+            container.scrollTop = container.scrollHeight;
+        }
+
+        // Call on page load
+        window.onload = scrollToBottom;
+
+        // Call after any content changes
+        const observer = new MutationObserver(scrollToBottom);
+        observer.observe(document.getElementById('chatContainer'), {
+            childList: true,
+            subtree: true
+        });
+    </script>
 </body>
 </html>

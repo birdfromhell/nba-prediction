@@ -1,0 +1,27 @@
+:root[data-theme="light"] {
+    --bg-color: #FAFAFA;
+    --header-bg: white;
+    --chat-bg: white;
+    --text-color: #262626;
+    --secondary-text: #8E8E8E;
+    --border-color: #DBDBDB;
+    --bot-message-bg: #EFEFEF;
+    --user-message-bg: #3797F0;
+    --input-bg: white;
+    --hover-color: rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #121212;
+    --header-bg: #1E1E1E;
+    --chat-bg: #1E1E1E;
+    --text-color: #E4E6EB;
+    --secondary-text: #B0B3B8;
+    --border-color: #2D3748;
+    --bot-message-bg: #2D3748;
+    --user-message-bg: #0D90F3;
+    --input-bg: #2D3748;
+    --hover-color: rgba(255, 255, 255, 0.1);
+}
+
+/* General styles and chat components go here */

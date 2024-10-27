@@ -4,177 +4,632 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NBA Prediction Chatbot</title>
+    <title>NBA Prediction Expert</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #f8f9fa;
+            --text-color: #202124;
+            --border-color: #dadce0;
+            --hover-color: #f1f3f4;
+            --shadow: 0 1px 3px rgba(0,0,0,0.12);
+            --message-bot-bg: #f8f9fa;
+            --message-user-bg: #1a73e8;
+            --message-user-text: #ffffff;
+            --sidebar-width: 280px;
+            --content-max-width: 900px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: var(--sidebar-width) 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "sidebar header"
+                "sidebar main"
+                "sidebar footer";
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            grid-area: sidebar;
+            background: #f8f9fa;
+            border-right: 1px solid var(--border-color);
+            padding: 24px;
+            position: fixed;
+            width: var(--sidebar-width);
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .sidebar-header .header-avatar {
+            width: 48px;
+            height: 48px;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .nav-item:hover {
+            background-color: var(--hover-color);
+        }
+
+        .nav-item i {
+            width: 24px;
+            color: var(--primary-color);
+        }
+
+        /* Header Styles */
+        .header {
+            grid-area: header;
+            padding: 16px 32px;
+            border-bottom: 1px solid var(--border-color);
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-title h1 {
+            font-size: 24px;
+            color: var(--text-color);
+            margin-bottom: 4px;
+        }
+
+        .header-title p {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        /* Main Content */
+        .main-wrapper {
+            grid-area: main;
+            padding: 32px;
+            background: #fff;
+        }
+
+        .chat-container {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+
+        /* Message Styles */
+        .message {
+            margin-bottom: 24px;
+        }
+
+        .message-content {
+            max-width: 80%;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .message.bot .message-content {
+            background-color: var(--message-bot-bg);
+            margin-right: auto;
+        }
+
+        .message.user .message-content {
+            background-color: var(--message-user-bg);
+            color: var(--message-user-text);
+            margin-left: auto;
+        }
+
+        /* Filter Options */
+        .filter-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .btn, .filter-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 24px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn:hover, .filter-btn:hover {
+            background-color: #1557b0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Match List */
+        .match-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .match-item {
+            background-color: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .match-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .match-date {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 16px;
+        }
+
+        .teams {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 0 16px;
+        }
+
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .team-logo {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            transition: transform 0.2s;
+        }
+
+        .team-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .vs {
+            font-weight: bold;
+            font-size: 20px;
+            color: var(--primary-color);
+            margin: 0 24px;
+        }
+
+        /* Input Container */
+        .input-container {
+            grid-area: footer;
+            background: white;
+            border-top: 1px solid var(--border-color);
+            padding: 20px 32px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        .input-wrapper {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            display: flex;
+            gap: 16px;
+        }
+
+        .message-input {
+            flex-grow: 1;
+        }
+
+        .message-input input {
+            width: 100%;
+            padding: 16px 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 30px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .message-input input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(26,115,232,0.1);
+        }
+
+        .send-button {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .send-button:hover {
+            background-color: #1557b0;
+            transform: scale(1.05);
+        }
+
+        /* Form Elements */
+        .date-input input[type="date"],
+        .team-select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 15px;
+            margin-bottom: 16px;
+            transition: all 0.2s;
+        }
+
+        .date-input input[type="date"]:focus,
+        .team-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(26,115,232,0.1);
+            outline: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            body {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "footer";
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .input-container {
+                width: 100%;
+            }
+
+            .main-wrapper {
+                padding: 16px;
+            }
+
+            .match-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 12px;
+            }
+
+            .filter-options {
+                grid-template-columns: 1fr;
+            }
+
+            .teams {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .vs {
+                margin: 16px 0;
+            }
+
+            .match-item {
+                padding: 16px;
+            }
+        }
+        .sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+@media (max-width: 1200px) {
+    .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    .header-content {
+        margin-left: 48px;
+    }
+}
+    </style>
 </head>
 
 <body>
-    <div class="header">
-        <div class="header-content">
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Add overlay div -->
+    <div class="overlay" id="overlay"></div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
             <div class="header-avatar">
                 <i class="fas fa-basketball-ball"></i>
             </div>
             <div class="header-title">
-                <h1>NBA Prediction Bot</h1>
-                <p>Active now</p>
+                <h1>NBA Expert</h1>
+                <p>AI Predictions</p>
             </div>
-            <div class="header-controls">
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <i class="fas fa-info-circle" style="color: var(--text-color);"></i>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item">
+                <i class="fas fa-home"></i>
+                Dashboard
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-chart-line"></i>
+                Predictions
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-calendar-alt"></i>
+                Schedule
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-trophy"></i>
+                Teams
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-chart-bar"></i>
+                Statistics
+            </a>
+        </nav>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div class="header-title">
+                <h1>NBA Predictions</h1>
+                <p>Get expert analysis and predictions</p>
             </div>
         </div>
     </div>
 
-    <div class="chat-container" id="chatContainer">
-        {% if not start_message and not date_message and not schedule and not team_message %}
-        <div class="message bot">
-            <div class="message-content">
-                <form method="POST">
-                    <input type="hidden" name="start" value="true">
-                    <button type="submit" class="btn">
-                        <i class="fas fa-play"></i>
-                        Mulai Prediksi
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <div class="chat-container" id="chatContainer">
+            {% if not start_message and not date_message and not schedule and not team_message %}
+            <div class="message bot">
+                <div class="message-content">
+                    <form method="POST">
+                        <input type="hidden" name="start" value="true">
+                        <button type="submit" class="btn">
+                            <i class="fas fa-play"></i>
+                            Mulai Prediksi
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if start_message %}
+            <div class="message bot">
+                <div class="message-content">
+                    {{ start_message }}
+                    <div class="filter-options">
+                        <form method="POST" class="filter-form">
+                            <input type="hidden" name="filter_type" value="date">
+                            <button type="submit" class="filter-btn">
+                                <i class="fas fa-calendar-alt"></i>
+                                Cari berdasarkan Tanggal
+                            </button>
+                        </form>
+                        <form method="POST" class="filter-form">
+                            <input type="hidden" name="filter_type" value="team">
+                            <button type="submit" class="filter-btn">
+                                <i class="fas fa-users"></i>
+                                Cari berdasarkan Tim
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if filter_type == 'date' and date_message %}
+            <div class="message bot">
+                <div class="message-content">
+                    {{ date_message }}
+                    <div class="date-input">
+                        <form method="POST">
+                            <input type="date" name="date" required>
+                            <button type="submit" class="btn">
+                                <i class="fas fa-calendar-alt"></i>
+                                Lihat Jadwal
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if filter_type == 'team' and team_message and teams %}
+            <div class="message bot">
+                <div class="message-content">
+                    {{ team_message }}
+                    <div class="team-input">
+                        <form method="POST">
+                            <select name="team_id" required class="team-select">
+                                <option value="">Pilih Tim</option>
+                                {% for team in teams %}
+                                <option value="{{ team.id }}">{{ team.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" class="btn">
+                                <i class="fas fa-search"></i>
+                                Lihat Jadwal
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if schedule %}   
+            <div class="message bot">
+                <div class="message-content">
+                    <div class="match-list">
+                        {% for game in schedule.response %}
+                        <div class="match-item">
+                            <div class="match-date">
+                                <i class="fas fa-calendar"></i>
+                                {{ game.date.start|format_date }}
+                            </div>
+                            <div class="teams">
+                                <div class="team">
+                                    <img src="{{ game.teams.home.logo }}" alt="{{ game.teams.home.name }}" class="team-logo">
+                                    <span>{{ game.teams.home.name }}</span>
+                                </div>
+                                <span class="vs">vs</span>
+                                <div class="team">
+                                    <img src="{{ game.teams.visitors.logo }}" alt="{{ game.teams.visitors.name }}" class="team-logo">
+                                    <span>{{ game.teams.visitors.name }}</span>
+                                </div>
+                            </div>
+                            <form method="POST">
+                                <input type="hidden" name="match_choice" value="{{ game.teams.home.name }} vs {{ game.teams.visitors.name }}">
+                                <button type="submit" class="btn">Dapatkan Prediksi</button>
+                            </form>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+    
+            {% if prediction_result %}
+            <div class="message bot">
+                <div class="message-content">
+                    {{ prediction_result|safe }}
+                    <div class="timestamp">{{ current_time }}</div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    
+        <div class="input-container">
+            <div class="input-wrapper">
+                <form method="POST" style="display: flex; width: 100%; gap: 0.8rem;">
+                    <div class="message-input">
+                        <input type="text" name="user_prompt" placeholder="Message..." required>
+                    </div>
+                    <button type="submit" class="send-button">
+                        <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
             </div>
         </div>
-        {% endif %}
-
-        {% if start_message %}
-        <div class="message bot">
-            <div class="message-content">
-                {{ start_message }}
-                <div class="filter-options">
-                    <form method="POST" class="filter-form">
-                        <input type="hidden" name="filter_type" value="date">
-                        <button type="submit" class="btn filter-btn">
-                            <i class="fas fa-calendar-alt"></i>
-                            Cari berdasarkan Tanggal
-                        </button>
-                    </form>
-                    <form method="POST" class="filter-form">
-                        <input type="hidden" name="filter_type" value="team">
-                        <button type="submit" class="btn filter-btn">
-                            <i class="fas fa-users"></i>
-                            Cari berdasarkan Tim
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if filter_type == 'date' and date_message %}
-        <div class="message bot">
-            <div class="message-content">
-                {{ date_message }}
-                <div class="date-input">
-                    <form method="POST">
-                        <input type="date" name="date" required>
-                        <button type="submit" class="btn">
-                            <i class="fas fa-calendar-alt"></i>
-                            Lihat Jadwal
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if filter_type == 'team' and team_message and teams %}
-        <div class="message bot">
-            <div class="message-content">
-                {{ team_message }}
-                <div class="team-input">
-                    <form method="POST">
-                        <select name="team_id" required class="team-select">
-                            <option value="">Pilih Tim</option>
-                            {% for team in teams %}
-                            <option value="{{ team.id }}">{{ team.name }}</option>
-                            {% endfor %}
-                        </select>
-                        <button type="submit" class="btn">
-                            <i class="fas fa-search"></i>
-                            Lihat Jadwal
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if schedule %}
-        <div class="message bot">
-            <div class="message-content">
-                <div class="match-list">
-                    {% for game in schedule.response %}
-                    <div class="match-item">
-                        <div class="match-date">
-                            <i class="fas fa-calendar"></i>
-                            {{ game.date.start|format_date }}
-                        </div>
-                        <div class="teams">
-                            <div class="team">
-                                <img src="{{ game.teams.home.logo }}" alt="{{ game.teams.home.name }}" class="team-logo">
-                                <span>{{ game.teams.home.name }}</span>
-                            </div>
-                            <span class="vs">vs</span>
-                            <div class="team">
-                                <img src="{{ game.teams.visitors.logo }}" alt="{{ game.teams.visitors.name }}" class="team-logo">
-                                <span>{{ game.teams.visitors.name }}</span>
-                            </div>
-                        </div>
-                        <form method="POST">
-                            <input type="hidden" name="match_choice" value="{{ game.teams.home.name }} vs {{ game.teams.visitors.name }}">
-                            <button type="submit" class="btn">Dapatkan Prediksi</button>
-                        </form>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if prediction_result %}
-        <div class="message bot">
-            <div class="message-content">
-                {{ prediction_result|safe }}
-                <div class="timestamp">{{ current_time }}</div>
-            </div>
-        </div>
-        {% endif %}
-    </div>
-
-    <div class="input-container">
-        <div class="input-wrapper">
-            <form method="POST" style="display: flex; width: 100%; gap: 0.8rem;">
-                <div class="message-input">
-                    <input type="text" name="user_prompt" placeholder="Message..." required>
-                </div>
-                <button type="submit" class="send-button">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function() {
-            navigator.serviceWorker.register("/service-worker.js").then(function(registration) {
-              console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function(err) {
-              console.log('ServiceWorker registration failed: ', err);
-            });
-          });
-        }
-    </script>
-    <script src='/static/service-worker.js'></script>
-    <link rel="manifest" href="/manifest.json">
-</body>
-
-</html>
+    
+        <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register("/service-worker.js").then(function(registration) {
+                  console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                  console.log('ServiceWorker registration failed: ', err);
+                });
+              });
+            }
+        </script>
+        <script src='/static/service-worker.js'></script>
+        <link rel="manifest" href="/manifest.json">
+    </body>
+    
+    </html>

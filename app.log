@@ -14122,3 +14122,307 @@ AttributeError: type object 'PoeClientManager' has no attribute 'get_settings'
 2024-10-30 02:32:59,628 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:59] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
 2024-10-30 02:32:59,629 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
 2024-10-30 02:32:59,676 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:59] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:40:33,202 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 03:40:33,712 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 03:40:33,750 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-86542059eabd2ff6.js "HTTP/1.1 200 OK"
+2024-10-30 03:40:33,809 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dDTCCzaLX7OV5OdMttbFh/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 03:40:34,081 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 03:40:35,430 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:40:35,954 - websocket - INFO - Websocket connected
+2024-10-30 03:40:35,972 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 03:40:35,973 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 03:40:40,268 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:40:40] "GET / HTTP/1.1" 200 -
+2024-10-30 03:42:50,491 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 03:42:50,538 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 03:42:50,577 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-86542059eabd2ff6.js "HTTP/1.1 200 OK"
+2024-10-30 03:42:50,627 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dDTCCzaLX7OV5OdMttbFh/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 03:42:50,898 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 03:42:52,230 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:42:52,735 - websocket - INFO - Websocket connected
+2024-10-30 03:42:52,752 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 03:42:52,752 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 03:42:54,951 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:42:54] "GET / HTTP/1.1" 200 -
+2024-10-30 03:47:53,390 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 03:47:53,723 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 03:47:53,771 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-86542059eabd2ff6.js "HTTP/1.1 200 OK"
+2024-10-30 03:47:53,815 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dDTCCzaLX7OV5OdMttbFh/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 03:47:54,098 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 03:47:55,251 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:47:55,764 - websocket - INFO - Websocket connected
+2024-10-30 03:47:55,774 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 03:47:55,774 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 03:47:57,955 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:47:57] "GET / HTTP/1.1" 200 -
+2024-10-30 03:47:58,294 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:47:58] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:47:58,542 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:47:58] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:48:01,360 - app - INFO - Successfully fetched NBA teams
+2024-10-30 03:48:01,361 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:48:01] "POST / HTTP/1.1" 200 -
+2024-10-30 03:48:01,691 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:48:01] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:48:01,982 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:48:01] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:48:07,782 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:48:07] "POST / HTTP/1.1" 200 -
+2024-10-30 03:48:07,890 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:48:07] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:48:07,949 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:48:07] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:48:12,750 - app - INFO - Successfully fetched schedule for team 2
+2024-10-30 03:48:12,755 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:48:12] "POST / HTTP/1.1" 200 -
+2024-10-30 03:48:12,911 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:48:12] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:48:12,961 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:48:12] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:49:16,538 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 03:49:16,584 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 03:49:16,630 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-86542059eabd2ff6.js "HTTP/1.1 200 OK"
+2024-10-30 03:49:16,692 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dDTCCzaLX7OV5OdMttbFh/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 03:49:16,954 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 03:49:17,887 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:49:18,404 - websocket - INFO - Websocket connected
+2024-10-30 03:49:18,419 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 03:49:18,419 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 03:49:21,701 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:21] "GET / HTTP/1.1" 200 -
+2024-10-30 03:49:21,763 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:21] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:49:21,772 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:21] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-10-30 03:49:21,842 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:21] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:49:26,981 - app - INFO - Successfully fetched NBA teams
+2024-10-30 03:49:26,982 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:26] "POST / HTTP/1.1" 200 -
+2024-10-30 03:49:27,138 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:27] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:49:27,143 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 03:49:27,197 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:27] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:49:28,534 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:28] "POST / HTTP/1.1" 200 -
+2024-10-30 03:49:28,597 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 03:49:28,597 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:28] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:49:28,657 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:28] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:49:35,100 - app - INFO - Successfully fetched NBA schedule for 2024-10-31
+2024-10-30 03:49:35,103 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:35] "POST / HTTP/1.1" 200 -
+2024-10-30 03:49:35,165 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 03:49:35,180 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:35] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:49:35,233 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:35] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:49:46,771 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 03:49:46,826 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 03:49:46,857 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-86542059eabd2ff6.js "HTTP/1.1 200 OK"
+2024-10-30 03:49:46,915 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dDTCCzaLX7OV5OdMttbFh/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 03:49:47,196 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 03:49:48,098 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:49:48,613 - websocket - INFO - Websocket connected
+2024-10-30 03:49:48,617 - app - INFO - Poe client initialized successfully
+2024-10-30 03:49:49,065 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:49:52,069 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 03:49:58,617 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:49:58,618 - app - WARNING - Error with primary bot, trying fallback: Sending request SendMessageMutation failed. status_code:200,  Error log: JSONDecodeError('Input is a zero-length, empty document: line 1 column 1 (char 0)')
+2024-10-30 03:49:59,024 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:49:59,025 - app - ERROR - Error generating prediction: 'NoneType' object is not subscriptable
+2024-10-30 03:49:59,026 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:59] "POST / HTTP/1.1" 200 -
+2024-10-30 03:49:59,090 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:59] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-10-30 03:49:59,095 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:59] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:49:59,225 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:49:59] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:50:01,830 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:01] "POST / HTTP/1.1" 200 -
+2024-10-30 03:50:01,919 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 03:50:01,929 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:01] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:50:02,036 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:02] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:50:03,490 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:03] "POST / HTTP/1.1" 200 -
+2024-10-30 03:50:03,564 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:03] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:50:03,566 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 03:50:03,664 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:03] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:50:08,002 - app - INFO - Successfully fetched schedule for team 2
+2024-10-30 03:50:08,007 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:08] "POST / HTTP/1.1" 200 -
+2024-10-30 03:50:08,179 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 03:50:08,324 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:08] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:50:08,404 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:50:08] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:52:32,998 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 03:52:33,041 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 03:52:33,078 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-86542059eabd2ff6.js "HTTP/1.1 200 OK"
+2024-10-30 03:52:33,130 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dDTCCzaLX7OV5OdMttbFh/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 03:52:33,395 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 03:52:34,164 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:52:34,691 - websocket - INFO - Websocket connected
+2024-10-30 03:52:34,706 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 03:52:34,706 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 03:52:36,865 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:52:36] "GET / HTTP/1.1" 200 -
+2024-10-30 03:52:36,923 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:52:36] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:52:37,077 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:52:37] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-10-30 03:52:37,307 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:52:37] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:53:40,330 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 03:53:40,415 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 03:53:40,455 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-86542059eabd2ff6.js "HTTP/1.1 200 OK"
+2024-10-30 03:53:40,507 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dDTCCzaLX7OV5OdMttbFh/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 03:53:40,810 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 03:53:41,527 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:53:42,035 - websocket - INFO - Websocket connected
+2024-10-30 03:53:42,049 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 03:53:42,049 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 03:53:44,388 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/asgiref/sync.py", line 254, in __call__
+    return call_result.result()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/asgiref/sync.py", line 331, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/app.py", line 488, in index
+    return render_template("index.html", **response_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/workspaces/nba-prediction/templates/index.html", line 506, in template
+    {{% if schedule %}
+jinja2.exceptions.TemplateSyntaxError: unexpected '%'
+2024-10-30 03:53:44,393 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:53:44] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-10-30 03:54:04,287 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 03:54:04,595 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 03:54:04,635 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-86542059eabd2ff6.js "HTTP/1.1 200 OK"
+2024-10-30 03:54:04,688 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dDTCCzaLX7OV5OdMttbFh/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 03:54:04,991 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 03:54:05,756 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:54:06,231 - websocket - INFO - Websocket connected
+2024-10-30 03:54:06,242 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 03:54:06,242 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 03:54:08,634 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/asgiref/sync.py", line 254, in __call__
+    return call_result.result()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/asgiref/sync.py", line 331, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/app.py", line 488, in index
+    return render_template("index.html", **response_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/workspaces/nba-prediction/templates/index.html", line 506, in template
+    {{% if schedule %}}
+jinja2.exceptions.TemplateSyntaxError: unexpected '%'
+2024-10-30 03:54:08,642 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:54:08] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-10-30 03:54:37,793 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 03:54:37,843 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 03:54:37,886 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-86542059eabd2ff6.js "HTTP/1.1 200 OK"
+2024-10-30 03:54:37,955 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dDTCCzaLX7OV5OdMttbFh/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 03:54:38,218 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 03:54:39,074 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 03:54:39,548 - websocket - INFO - Websocket connected
+2024-10-30 03:54:39,556 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 03:54:39,556 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 03:54:41,593 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:54:41] "GET / HTTP/1.1" 200 -
+2024-10-30 03:54:41,878 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:54:41] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-10-30 03:54:41,881 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:54:41] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 03:54:41,952 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 03:54:41] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 04:01:14,050 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 04:01:14,154 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-96f5b05c5fc1a92f.js "HTTP/1.1 200 OK"
+2024-10-30 04:01:14,199 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-eec001c09d3c3602.js "HTTP/1.1 200 OK"
+2024-10-30 04:01:14,268 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/gyMD4BgYX6TWFZ3QttEMz/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 04:01:14,543 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 04:01:15,395 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 04:01:15,908 - websocket - INFO - Websocket connected
+2024-10-30 04:01:15,920 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 04:01:15,920 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 04:01:17,556 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:01:17] "GET / HTTP/1.1" 200 -
+2024-10-30 04:01:17,934 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:01:17] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-10-30 04:01:17,935 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:01:17] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 04:01:18,177 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:01:18] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 04:02:28,612 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 04:02:28,654 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-96f5b05c5fc1a92f.js "HTTP/1.1 200 OK"
+2024-10-30 04:02:28,688 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-eec001c09d3c3602.js "HTTP/1.1 200 OK"
+2024-10-30 04:02:28,764 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/gyMD4BgYX6TWFZ3QttEMz/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 04:02:29,037 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 04:02:29,780 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 04:02:30,309 - websocket - INFO - Websocket connected
+2024-10-30 04:02:30,321 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 04:02:30,322 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 04:02:33,358 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:02:33] "GET / HTTP/1.1" 200 -
+2024-10-30 04:02:33,642 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:02:33] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-10-30 04:02:33,916 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:02:33] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 04:04:37,242 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:04:37] "GET / HTTP/1.1" 200 -
+2024-10-30 04:04:37,492 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:04:37] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 04:04:37,775 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:04:37] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 04:08:15,007 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 04:08:15,091 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5740bb64cd91b522.js "HTTP/1.1 200 OK"
+2024-10-30 04:08:15,143 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-784c1a9168f544ef.js "HTTP/1.1 200 OK"
+2024-10-30 04:08:15,206 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/kNvV8uKQOzj8-QkKZ-fn7/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 04:08:15,486 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 04:08:16,134 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 04:08:16,648 - websocket - INFO - Websocket connected
+2024-10-30 04:08:16,656 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 04:08:16,656 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 04:08:19,035 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:19] "GET / HTTP/1.1" 200 -
+2024-10-30 04:08:19,380 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 04:08:19,413 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:19] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 04:08:19,693 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:19] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 04:08:21,863 - app - INFO - Successfully fetched NBA teams
+2024-10-30 04:08:21,864 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:21] "POST / HTTP/1.1" 200 -
+2024-10-30 04:08:22,065 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:22] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 04:08:22,213 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:22] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 04:08:22,332 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:22] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -

@@ -33,8 +33,8 @@ class Config:
     NBA_API_KEY = os.getenv('NBA_API_KEY', 'fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3')
     SEARCH_API_KEY = os.getenv('SEARCH_API_KEY', 'fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3')
     POE_TOKEN = {
-        'p-b': 'eGjrO4GcgvQgEtlDUYtUYQ%3D%3D', 
-        'p-lat': 't9icW9X07GI7GxMfOo5mNkEyZ8252EjVI7fkxzZE6A%3D%3D',
+        'p-b': os.getenv('POE_TOKEN_P_B'), 
+        'p-lat': os.getenv('POE_TOKEN_P_LAT')
     }
     POE_PROXY = os.getenv('POE_PROXY', None)
     CACHE_TIMEOUT = 3600  # 1 hour
@@ -58,20 +58,33 @@ def rate_limited_api_call(url: str, headers: Dict, params: Dict) -> requests.Res
 
 @lru_cache(maxsize=128)
 def get_nba_schedule(date: str) -> Optional[Dict]:
-    """Get NBA schedule from the API for a specific date with caching"""
+    """Get NBA schedule from the API with improved error handling"""
     url = "https://api-nba-v1.p.rapidapi.com/games"
     headers = {
         "x-rapidapi-key": Config.NBA_API_KEY,
         "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
     }
-    
-    try:
-        response = rate_limited_api_call(url, headers=headers, params={"date": date})
-        logger.info(f"Successfully fetched NBA schedule for {date}")
-        return response.json()
-    except (requests.RequestException, APIError) as e:
-        logger.error(f"Error fetching NBA schedule: {str(e)}")
-        return None
+
+    retries = 0
+    while retries < Config.MAX_RETRIES:
+        try:
+            response = rate_limited_api_call(url, headers=headers, params={"date": date})
+            logger.info(f"Successfully fetched NBA schedule for {date}")
+            return response.json()
+        except APIError as e:
+            if e.args and "403" in str(e.args[0]):
+                logger.error("API key invalid or expired")
+                return None
+            retries += 1
+            if retries < Config.MAX_RETRIES:
+                logger.warning(f"Retrying API call ({retries}/{Config.MAX_RETRIES})")
+                time.sleep(Config.RETRY_DELAY)
+            else:
+                logger.error(f"Failed to fetch NBA schedule after {Config.MAX_RETRIES} retries")
+                return None
+        except Exception as e:
+            logger.error(f"Unexpected error fetching NBA schedule: {str(e)}")
+            return None
 
 class MatchDataProcessor:
     """Class to handle match data processing"""
@@ -82,7 +95,7 @@ class MatchDataProcessor:
         'basketball-reference.com': 4,
         'aiscore.com': 3,
         'landofbasketball.com': 3,
-        'sofascore.com'
+        'sofascore.com': 3
     }
 
     @staticmethod
@@ -219,7 +232,7 @@ class PredictionGenerator:
     
     def __init__(self):
         self.poe_manager = PoeClientManager()
-        self.default_bot = "claude-instant"
+        self.default_bot = os.getenv('DEFAULT_MODEL')
         self.fallback_bot = "sage"
         self.max_context_length = 2000
 

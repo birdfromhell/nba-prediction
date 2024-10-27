@@ -26,9 +26,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-app = Flask(__name__,static_url_path='/static')
+app = Flask(__name__)
 
-app.wsgi_app = WhiteNoise(app.wsgi_app,root="static/")
+app.wsgi_app = WhiteNoise(app.wsgi_app, root="static/")
 
 # Configuration
 class Config:

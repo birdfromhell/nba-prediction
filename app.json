@@ -2,7 +2,7 @@
 {
     "name": "NBA AI",
     "description": "",
-    "repository": "https://github.com/gtalarico/flask-vuejs-template",
+    "repository": "https://github.com/birdfromhell/nba-prediction",
     "logo": "https://github.com/gtalarico/flask-vuejs-template/raw/master/docs/project-logo.png",
     "keywords": ["flask"],
     "env": {

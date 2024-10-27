@@ -1,0 +1,32 @@
+<div class="header">
+    <h1>{% block header_title %}{% endblock %}</h1>
+    <div class="theme-toggle">
+        <span class="material-icons">dark_mode</span>
+    </div>
+</div>
+
+<style>
+    .header {
+        padding: 15px;
+        background: inherit;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+    }
+
+    .theme-toggle {
+        padding: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+        background: rgba(0,0,0,0.1);
+    }
+</style>

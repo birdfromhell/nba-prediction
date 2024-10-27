@@ -1,0 +1,47 @@
+<div class="navbar">
+    <a href="{{ url_for('home') }}" class="nav-item {% if active_page == 'home' %}active{% endif %}">
+        <span class="material-icons">home</span>
+        <div>Home</div>
+    </a>
+    <a href="{{ url_for('chat') }}" class="nav-item {% if active_page == 'chat' %}active{% endif %}">
+        <span class="material-icons">chat</span>
+        <div>Chat</div>
+    </a>
+    <a href="{{ url_for('profile') }}" class="nav-item {% if active_page == 'profile' %}active{% endif %}">
+        <span class="material-icons">person</span>
+        <div>Profile</div>
+    </a>
+</div>
+
+<style>
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        max-width: 480px;
+        background: inherit;
+        padding: 12px;
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-item {
+        text-align: center;
+        color: #666;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 12px;
+        transition: var(--transition);
+    }
+
+    .nav-item:hover {
+        background: rgba(33,150,243,0.1);
+    }
+
+    .nav-item.active {
+        color: var(--primary);
+        background: rgba(33,150,243,0.1);
+    }
+</style>

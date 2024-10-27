@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - AI Chatbot</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary: #2196F3;
+            --bg-light: #f5f5f5;
+            --bg-dark: #1a1a1a;
+            --text-light: #333;
+            --text-dark: #fff;
+            --nav-light: #fff;
+            --nav-dark: #242424;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: var(--bg-light);
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: var(--nav-light);
+            min-height: 100vh;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        body.dark-mode .container {
+            background: var(--nav-dark);
+        }
+    </style>
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        {% include 'components/header.html' %}
+        
+        {% block content %}{% endblock %}
+        
+        {% include 'components/navbar.html' %}
+    </div>
+
+    {% block scripts %}{% endblock %}
+    <script>
+        // Handle dark mode toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const themeIcon = themeToggle.querySelector('.material-icons');
+        
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            themeIcon.textContent = document.body.classList.contains('dark-mode') ? 'light_mode' : 'dark_mode';
+        });
+    </script>
+</body>
+</html>

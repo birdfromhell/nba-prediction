@@ -11,7 +11,7 @@ import os
 from dotenv import load_dotenv
 from typing import Optional, Dict, List, Any
 import time
-
+from whitenoise import Whitenoise
 # Load environment variables
 load_dotenv()
 
@@ -27,6 +27,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__,static_url_path='/static')
+
+app.wsgi_app = Whitenoise(app.wsgi_app,root="static/")
 
 # Configuration
 class Config:

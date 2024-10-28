@@ -393,7 +393,7 @@ async def index():
 
     return render_template("index.html", **response_data)
 
-@app.route('/health')
+@app.route('/health', methods=['GET'])
 async def health_check():
     """Health check endpoint"""
     try:

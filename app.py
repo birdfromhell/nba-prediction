@@ -393,24 +393,21 @@ async def index():
 
     return render_template("index.html", **response_data)
 
-@app.route("/health", methods=["GET"])
+@app.route('/health')
 async def health_check():
     """Health check endpoint"""
     try:
         poe_manager = PoeClientManager()
         client = await poe_manager.get_client()
-        
-        return jsonify({
-            "status": "healthy",
-            "poe_api": "connected",
-            "timestamp": datetime.now().isoformat()
-        }), 200
+
+        return render_template('health_check.html', 
+                               status='healthy', 
+                               timestamp=datetime.now().isoformat()), 200
     except Exception as e:
-        return jsonify({
-            "status": "unhealthy",
-            "error": str(e),
-            "timestamp": datetime.now().isoformat()
-        }), 500
+        return render_template('health_check.html', 
+                               status='unhealthy', 
+                               error=str(e), 
+                               timestamp=datetime.now().isoformat()), 500
 
 if __name__ == "__main__":
     # Run with Hypercorn for async support

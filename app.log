@@ -13581,3 +13581,42 @@ jinja2.exceptions.TemplateSyntaxError: expected token ':', got '}'
 2024-10-29 06:45:49,539 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 06:45:49] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
 2024-10-29 06:45:49,540 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 06:45:49] "GET / HTTP/1.1" 200 -
 2024-10-29 06:45:49,545 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 06:45:49] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 07:13:13,952 - app - INFO - Successfully fetched NBA teams
+2024-10-29 07:14:49,236 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-29 07:14:49,240 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-29 07:14:52,230 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:14:52] "GET / HTTP/1.1" 200 -
+2024-10-29 07:14:52,512 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:14:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 07:14:52,513 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:14:52] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 07:14:52,634 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:14:52] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 07:14:52,876 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:14:52] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 07:14:52,930 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:14:52] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 07:14:52,930 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:14:52] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 07:15:20,335 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-29 07:15:20,335 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-29 07:15:24,440 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:24] "GET / HTTP/1.1" 200 -
+2024-10-29 07:15:24,497 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 07:15:24,507 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:24] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 07:15:24,541 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:24] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 07:15:24,608 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:24] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 07:15:24,667 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:24] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 07:15:24,669 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:24] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 07:15:24,671 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:24] "GET / HTTP/1.1" 200 -
+2024-10-29 07:15:28,405 - app - INFO - Successfully fetched NBA teams
+2024-10-29 07:15:28,407 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:28] "POST / HTTP/1.1" 200 -
+2024-10-29 07:15:28,467 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 07:15:28,472 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:28] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 07:15:28,495 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:28] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 07:15:28,551 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:28] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 07:15:28,603 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:28] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 07:15:28,604 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:28] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 07:15:28,609 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:28] "GET / HTTP/1.1" 200 -
+2024-10-29 07:15:30,018 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:30] "POST / HTTP/1.1" 200 -
+2024-10-29 07:15:30,074 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 07:15:30,082 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:30] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 07:15:30,083 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:30] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 07:15:30,142 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:30] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 07:15:30,194 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:30] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 07:15:30,196 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:30] "GET / HTTP/1.1" 200 -
+2024-10-29 07:15:30,199 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:15:30] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -

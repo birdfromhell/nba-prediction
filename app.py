@@ -454,6 +454,10 @@ async def health_check():
             "error": str(e),
             "timestamp": datetime.now().isoformat()
         }), 500
+    
+@app.route('/manifest.json')
+def serve_manifest():
+    return send_file('manifest.json', mimetype='application/manifest+json')
 
 if __name__ == "__main__":
     # Run with Hypercorn for async support

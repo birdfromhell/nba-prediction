@@ -44,8 +44,8 @@ def format_date(date_string):
 
 # Configuration
 class Config:
-    NBA_API_KEY = os.getenv('NBA_API_KEY', 'fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3')
-    SEARCH_API_KEY = os.getenv('SEARCH_API_KEY', 'fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3')
+    NBA_API_KEY = os.getenv('NBA_API_KEY')
+    SEARCH_API_KEY = os.getenv('SEARCH_API_KEY')
     POE_TOKEN = {
         'p-b': os.getenv('POE_TOKEN_P_B'), 
         'p-lat': os.getenv('POE_TOKEN_P_LAT'),

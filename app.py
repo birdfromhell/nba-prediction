@@ -11,6 +11,8 @@ import os
 from dotenv import load_dotenv
 from typing import Optional, Dict, List, Any
 import time
+import markdown
+from whitenoise import WhiteNoise
 
 # Load environment variables
 load_dotenv()
@@ -27,14 +29,15 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+app.wsgi_app = WhiteNoise(app.wsgi_app, root="static/")
 
 # Configuration
 class Config:
     NBA_API_KEY = os.getenv('NBA_API_KEY', 'fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3')
     SEARCH_API_KEY = os.getenv('SEARCH_API_KEY', 'fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3')
     POE_TOKEN = {
-        'p-b': 'eGjrO4GcgvQgEtlDUYtUYQ%3D%3D', 
-        'p-lat': 't9icW9X07GI7GxMfOo5mNkEyZ8252EjVI7fkxzZE6A%3D%3D',
+        'p-b': os.getenv('POE_TOKEN_P_B'), 
+        'p-lat': os.getenv('POE_TOKEN_P_LAT'),
     }
     POE_PROXY = os.getenv('POE_PROXY', None)
     CACHE_TIMEOUT = 3600  # 1 hour
@@ -244,27 +247,13 @@ Analisis Lah Berdasarkan Data Diatas
             return truncated
         return prompt
 
-    def _format_response(self, response: str) -> str:
+    import markdown
+
+    def _format_response(self, response_text: str) -> str:
         """Format the AI response for better readability"""
-        # Remove multiple consecutive newlines
-        formatted = '\n'.join(line for line in response.splitlines() if line.strip())
-        
-        # Add consistent spacing after sections
-        formatted = formatted.replace('# ', '\n# ')
-        formatted = formatted.replace('## ', '\n## ')
-        
-        # Ensure bullet points are properly aligned
-        lines = formatted.splitlines()
-        formatted_lines = []
-        for line in lines:
-            if line.strip().startswith('•'):
-                formatted_lines.append('  ' + line.strip())
-            elif line.strip().startswith('-'):
-                formatted_lines.append(line.strip())
-            else:
-                formatted_lines.append(line)
-        
-        return '\n'.join(formatted_lines)
+        # Convert Markdown to HTML
+        html_response = markdown.markdown(response_text)
+        return html_response
 
     @staticmethod
     def handle_rate_limit(func):

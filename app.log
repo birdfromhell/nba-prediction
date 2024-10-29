@@ -680,3 +680,329 @@
 2024-10-27 12:33:23,053 - werkzeug - INFO - 127.0.0.1 - - [27/Oct/2024 12:33:23] "GET / HTTP/1.1" 200 -
 2024-10-27 12:33:23,124 - werkzeug - INFO - 127.0.0.1 - - [27/Oct/2024 12:33:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2024-10-27 12:33:23,128 - werkzeug - INFO - 127.0.0.1 - - [27/Oct/2024 12:33:23] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 03:26:38,372 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-29 03:26:38,372 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-29 03:26:45,437 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:26:45] "GET / HTTP/1.1" 200 -
+2024-10-29 03:26:45,819 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:26:45] "GET /static/service-worker.js HTTP/1.1" 200 -
+2024-10-29 03:26:46,006 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:26:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-29 03:26:46,196 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:26:46] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:26:46,275 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:26:46] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:28:09,842 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:09] "POST / HTTP/1.1" 200 -
+2024-10-29 03:28:10,042 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:10] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:28:10,189 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:10] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:28:10,261 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:10] "GET / HTTP/1.1" 200 -
+2024-10-29 03:28:10,271 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:10] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:28:16,066 - app - INFO - Successfully fetched NBA schedule for 2024-10-30
+2024-10-29 03:28:16,067 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:16] "POST / HTTP/1.1" 200 -
+2024-10-29 03:28:16,188 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:16] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:28:16,592 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:16] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:28:16,703 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:16] "GET / HTTP/1.1" 200 -
+2024-10-29 03:28:16,712 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:16] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:28:16,713 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:28:16] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:28:21,316 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-29 03:28:21,530 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-9b95b451caae3bfe.js "HTTP/1.1 200 OK"
+2024-10-29 03:28:21,561 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-a3f7f360004a99c3.js "HTTP/1.1 200 OK"
+2024-10-29 03:28:21,614 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/7UX8PNtBxlejRJOA5NaK-/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-29 03:28:21,882 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-29 03:28:22,715 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:28:23,229 - websocket - INFO - Websocket connected
+2024-10-29 03:28:23,236 - app - INFO - Poe client initialized successfully
+2024-10-29 03:28:23,687 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:28:26,840 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:29:28,814 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:29:28] "POST / HTTP/1.1" 200 -
+2024-10-29 03:31:54,350 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-29 03:31:54,351 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-29 03:31:58,759 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:31:58] "GET / HTTP/1.1" 200 -
+2024-10-29 03:31:59,062 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:31:59] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:31:59,412 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:31:59] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:31:59,800 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:31:59] "GET / HTTP/1.1" 200 -
+2024-10-29 03:31:59,813 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:31:59] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:31:59,841 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:31:59] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:32:00,438 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:00] "POST / HTTP/1.1" 200 -
+2024-10-29 03:32:00,544 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:00] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:32:00,627 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:00] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:32:00,706 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:00] "GET / HTTP/1.1" 200 -
+2024-10-29 03:32:00,707 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:00] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:32:00,708 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:00] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:32:05,710 - app - INFO - Successfully fetched NBA schedule for 2024-10-30
+2024-10-29 03:32:05,712 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:05] "POST / HTTP/1.1" 200 -
+2024-10-29 03:32:05,913 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:05] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:32:06,252 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:06] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:32:06,327 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:06] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:32:06,328 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:06] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:32:06,328 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:32:06] "GET / HTTP/1.1" 200 -
+2024-10-29 03:32:11,180 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-29 03:32:11,237 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-9b95b451caae3bfe.js "HTTP/1.1 200 OK"
+2024-10-29 03:32:11,272 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-a3f7f360004a99c3.js "HTTP/1.1 200 OK"
+2024-10-29 03:32:11,329 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/7UX8PNtBxlejRJOA5NaK-/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-29 03:32:11,609 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-29 03:32:12,259 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:32:12,733 - websocket - INFO - Websocket connected
+2024-10-29 03:32:12,738 - app - INFO - Poe client initialized successfully
+2024-10-29 03:32:13,221 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:32:22,467 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:33:06,683 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:33:06] "POST / HTTP/1.1" 200 -
+2024-10-29 03:33:06,785 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:33:06] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:33:06,832 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:33:06] "GET /static/service-worker.js HTTP/1.1" 200 -
+2024-10-29 03:33:06,895 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:33:06] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:33:06,897 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:33:06] "GET / HTTP/1.1" 200 -
+2024-10-29 03:33:06,899 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:33:06] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:55:44,007 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-29 03:55:44,008 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-29 03:55:46,487 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:55:46] "GET / HTTP/1.1" 200 -
+2024-10-29 03:55:46,754 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:55:46] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-10-29 03:55:46,767 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:55:46] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:55:46,804 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:55:46] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-10-29 03:55:47,049 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:55:47] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:55:47,112 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:55:47] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:55:47,114 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:55:47] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:56:54,387 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-29 03:56:54,387 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-29 03:56:56,136 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:56:56] "GET / HTTP/1.1" 200 -
+2024-10-29 03:56:56,194 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:56:56] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:56:56,196 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:56:56] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-10-29 03:56:56,226 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:56:56] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 03:56:56,280 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:56:56] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:56:56,335 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:56:56] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:56:56,336 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:56:56] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:56:56,344 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:56:56] "GET / HTTP/1.1" 200 -
+2024-10-29 03:57:02,515 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:02] "POST / HTTP/1.1" 200 -
+2024-10-29 03:57:02,579 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 03:57:02,580 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:02] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:57:02,603 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:02] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 03:57:02,657 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:02] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:57:02,703 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:02] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:57:02,705 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:02] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:57:02,709 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:02] "GET / HTTP/1.1" 200 -
+2024-10-29 03:57:09,439 - app - INFO - Successfully fetched NBA schedule for 2024-10-30
+2024-10-29 03:57:09,441 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:09] "POST / HTTP/1.1" 200 -
+2024-10-29 03:57:09,502 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 03:57:09,515 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:09] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 03:57:09,520 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:09] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:57:09,634 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:09] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:57:09,715 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:09] "GET / HTTP/1.1" 200 -
+2024-10-29 03:57:09,717 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:09] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:57:09,718 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:09] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:57:14,910 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-29 03:57:15,021 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-9b95b451caae3bfe.js "HTTP/1.1 200 OK"
+2024-10-29 03:57:15,061 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-c4a1e6875ce42e4d.js "HTTP/1.1 200 OK"
+2024-10-29 03:57:15,119 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dX0dTptxHf244KCOZluQg/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-29 03:57:15,405 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-29 03:57:16,123 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:57:16,638 - websocket - INFO - Websocket connected
+2024-10-29 03:57:16,642 - app - INFO - Poe client initialized successfully
+2024-10-29 03:57:17,012 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:57:17,460 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:57:17,460 - app - WARNING - Error with primary bot, trying fallback: Daily limit reached for nbapredictionai.
+2024-10-29 03:57:17,861 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:57:17,862 - app - ERROR - Error generating prediction: 'NoneType' object is not subscriptable
+2024-10-29 03:57:17,863 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:17] "POST / HTTP/1.1" 200 -
+2024-10-29 03:57:17,931 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 03:57:17,937 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:17] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:57:17,939 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:17] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 03:57:18,010 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:18] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:57:18,064 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:18] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:57:18,065 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:18] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:57:18,065 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:57:18] "GET / HTTP/1.1" 200 -
+2024-10-29 03:58:12,771 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-29 03:58:12,771 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-29 03:58:15,865 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:15] "GET / HTTP/1.1" 200 -
+2024-10-29 03:58:15,922 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 03:58:15,935 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:15] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:15,959 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:15] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:16,013 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:16] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:16,069 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:16] "GET / HTTP/1.1" 200 -
+2024-10-29 03:58:16,070 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:16] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:58:16,071 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:16] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:58:18,870 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:18] "POST / HTTP/1.1" 200 -
+2024-10-29 03:58:18,928 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 03:58:18,935 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:18] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:18,957 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:18] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:19,018 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:19] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:19,087 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:19] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:58:19,089 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:19] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:58:19,090 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:19] "GET / HTTP/1.1" 200 -
+2024-10-29 03:58:24,957 - app - INFO - Successfully fetched NBA schedule for 2024-10-30
+2024-10-29 03:58:24,959 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:24] "POST / HTTP/1.1" 200 -
+2024-10-29 03:58:25,018 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 03:58:25,041 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:25] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:25,042 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:25] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:25,126 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:25] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:25,178 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:25] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:58:25,179 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:25] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:58:25,180 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:25] "GET / HTTP/1.1" 200 -
+2024-10-29 03:58:29,564 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-29 03:58:29,613 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-9b95b451caae3bfe.js "HTTP/1.1 200 OK"
+2024-10-29 03:58:29,660 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-c4a1e6875ce42e4d.js "HTTP/1.1 200 OK"
+2024-10-29 03:58:29,744 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dX0dTptxHf244KCOZluQg/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-29 03:58:30,010 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-29 03:58:30,744 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:58:31,250 - websocket - INFO - Websocket connected
+2024-10-29 03:58:31,252 - app - INFO - Poe client initialized successfully
+2024-10-29 03:58:31,776 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:58:32,219 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:58:32,220 - app - WARNING - Error with primary bot, trying fallback: Daily limit reached for nbapredictionai.
+2024-10-29 03:58:32,658 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 03:58:32,659 - app - ERROR - Error generating prediction: 'NoneType' object is not subscriptable
+2024-10-29 03:58:32,660 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:32] "POST / HTTP/1.1" 200 -
+2024-10-29 03:58:32,723 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 03:58:32,725 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:32] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:32,726 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:32] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:32,788 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:32] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 03:58:32,854 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:32] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 03:58:32,855 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:32] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 03:58:32,856 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 03:58:32] "GET / HTTP/1.1" 200 -
+2024-10-29 04:00:18,343 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-29 04:00:18,344 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-29 04:00:21,183 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:21] "GET / HTTP/1.1" 200 -
+2024-10-29 04:00:21,617 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:00:21,697 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:21] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:00:21,775 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:21] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:00:21,855 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:21] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:00:21,914 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:21] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:00:21,926 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:21] "GET / HTTP/1.1" 200 -
+2024-10-29 04:00:21,928 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:21] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:00:23,223 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:23] "POST / HTTP/1.1" 200 -
+2024-10-29 04:00:23,309 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:00:23,318 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:23] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:00:23,327 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:23] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:00:23,386 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:23] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:00:23,440 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:23] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:00:23,444 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:23] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:00:23,447 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:23] "GET / HTTP/1.1" 200 -
+2024-10-29 04:00:29,049 - app - INFO - Successfully fetched NBA schedule for 2024-10-30
+2024-10-29 04:00:29,051 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:29] "POST / HTTP/1.1" 200 -
+2024-10-29 04:00:29,110 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:00:29,125 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:29] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:00:29,130 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:29] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:00:29,221 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:29] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:00:29,277 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:29] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:00:29,279 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:29] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:00:29,286 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:00:29] "GET / HTTP/1.1" 200 -
+2024-10-29 04:00:33,972 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-29 04:00:34,047 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-9b95b451caae3bfe.js "HTTP/1.1 200 OK"
+2024-10-29 04:00:34,084 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-c4a1e6875ce42e4d.js "HTTP/1.1 200 OK"
+2024-10-29 04:00:34,135 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dX0dTptxHf244KCOZluQg/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-29 04:00:34,399 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-29 04:00:35,186 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 04:00:35,670 - websocket - INFO - Websocket connected
+2024-10-29 04:00:35,674 - app - INFO - Poe client initialized successfully
+2024-10-29 04:00:36,057 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 04:00:38,158 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 04:01:07,981 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:01:07] "POST / HTTP/1.1" 200 -
+2024-10-29 04:01:08,134 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:01:08] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:01:08,171 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:01:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:01:08,189 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:01:08] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:01:08,247 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:01:08] "GET /static/service-worker.js HTTP/1.1" 200 -
+2024-10-29 04:01:08,299 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:01:08] "GET / HTTP/1.1" 200 -
+2024-10-29 04:01:08,304 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:01:08] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:01:08,305 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:01:08] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:06:32,283 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-29 04:06:32,284 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-29 04:06:35,404 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:35] "GET / HTTP/1.1" 200 -
+2024-10-29 04:06:35,724 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:35] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:06:35,733 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:35] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-10-29 04:06:35,813 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:35] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-10-29 04:06:36,037 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:36] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:06:36,086 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:36] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:06:36,090 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:36] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:06:37,401 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:37] "POST / HTTP/1.1" 200 -
+2024-10-29 04:06:37,494 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:06:37,495 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:37] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:06:37,496 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:37] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:06:37,887 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:37] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:06:37,941 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:37] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:06:37,942 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:37] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:06:37,942 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:37] "GET / HTTP/1.1" 200 -
+2024-10-29 04:06:43,840 - app - INFO - Successfully fetched NBA schedule for 2024-11-01
+2024-10-29 04:06:43,842 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:43] "POST / HTTP/1.1" 200 -
+2024-10-29 04:06:43,907 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:06:43,929 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:43] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:06:43,948 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:43] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:06:44,089 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:44] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:06:44,161 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:44] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:06:44,162 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:44] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:06:44,165 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:06:44] "GET / HTTP/1.1" 200 -
+2024-10-29 04:06:52,142 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-29 04:06:52,237 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-9b95b451caae3bfe.js "HTTP/1.1 200 OK"
+2024-10-29 04:06:52,278 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-c4a1e6875ce42e4d.js "HTTP/1.1 200 OK"
+2024-10-29 04:06:52,327 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/dX0dTptxHf244KCOZluQg/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-29 04:06:52,600 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-29 04:06:53,420 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 04:06:53,936 - websocket - INFO - Websocket connected
+2024-10-29 04:06:53,938 - app - INFO - Poe client initialized successfully
+2024-10-29 04:06:54,378 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 04:07:02,062 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 04:07:53,024 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:07:53] "POST / HTTP/1.1" 200 -
+2024-10-29 04:08:42,167 - app - WARNING - Error with primary bot, trying fallback: Sending request HandleBotLandingPageQuery failed.  Error log: RuntimeError('Event loop is closed')
+2024-10-29 04:08:42,650 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 04:08:42,651 - app - ERROR - Error generating prediction: 'NoneType' object is not subscriptable
+2024-10-29 04:08:42,652 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:42] "POST / HTTP/1.1" 200 -
+2024-10-29 04:08:42,955 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:42] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:42,970 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:08:43,021 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:43] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:43,246 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:43] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:43,301 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:43] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:08:43,303 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:43] "GET / HTTP/1.1" 200 -
+2024-10-29 04:08:44,527 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:44] "POST / HTTP/1.1" 200 -
+2024-10-29 04:08:44,597 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:08:44,603 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:44] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:44,604 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:44] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:44,666 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:44] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:44,714 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:44] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:08:44,718 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:44] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:08:44,720 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:44] "GET / HTTP/1.1" 200 -
+2024-10-29 04:08:51,011 - app - INFO - Successfully fetched NBA schedule for 2024-10-30
+2024-10-29 04:08:51,013 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:51] "POST / HTTP/1.1" 200 -
+2024-10-29 04:08:51,073 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:08:51,084 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:51] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:51,088 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:51] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:51,195 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:51] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:51,301 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:51] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:08:51,308 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:51] "GET / HTTP/1.1" 200 -
+2024-10-29 04:08:51,309 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:51] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:08:55,281 - app - WARNING - Error with primary bot, trying fallback: Sending request HandleBotLandingPageQuery failed.  Error log: RuntimeError('Event loop is closed')
+2024-10-29 04:08:55,688 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 04:08:55,689 - app - ERROR - Error generating prediction: 'NoneType' object is not subscriptable
+2024-10-29 04:08:55,690 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:55] "POST / HTTP/1.1" 200 -
+2024-10-29 04:08:55,751 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:08:55,753 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:55] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:55,754 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:55] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:55,816 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:55] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:08:55,885 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:55] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:08:55,887 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:55] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:08:55,888 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:08:55] "GET / HTTP/1.1" 200 -
+2024-10-29 04:09:24,390 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:24] "POST / HTTP/1.1" 200 -
+2024-10-29 04:09:24,451 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:24] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:09:24,454 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:24] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:09:24,455 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:09:24,506 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:24] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:09:24,553 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:24] "GET / HTTP/1.1" 200 -
+2024-10-29 04:09:24,557 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:24] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:09:24,561 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:24] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:09:45,505 - app - INFO - Successfully fetched NBA schedule for 2024-11-01
+2024-10-29 04:09:45,507 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:45] "POST / HTTP/1.1" 200 -
+2024-10-29 04:09:45,570 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:09:45,587 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:45] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:09:45,587 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:45] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:09:45,635 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:45] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:09:45,725 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:45] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:09:45,727 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:45] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -
+2024-10-29 04:09:45,727 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:09:45] "GET / HTTP/1.1" 200 -
+2024-10-29 04:09:55,067 - app - WARNING - Error with primary bot, trying fallback: Timed out waiting for other messages to send.
+2024-10-29 04:10:00,162 - app - ERROR - Error generating prediction: Timed out waiting for other messages to send.
+2024-10-29 04:10:00,164 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:10:00] "POST / HTTP/1.1" 200 -
+2024-10-29 04:10:00,257 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:10:00] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-29 04:10:00,258 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:10:00] "[36mGET /static/service-worker.js HTTP/1.1[0m" 304 -
+2024-10-29 04:10:00,827 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:10:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-29 04:10:00,878 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:10:00] "GET /static/service-worker.js HTTP/1.1" 200 -
+2024-10-29 04:10:00,928 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:10:00] "GET / HTTP/1.1" 200 -
+2024-10-29 04:10:00,929 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:10:00] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-10-29 04:10:00,934 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 04:10:00] "[33mGET /static/icon.png HTTP/1.1[0m" 404 -

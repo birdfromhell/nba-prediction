@@ -414,7 +414,21 @@ async def index():
                     if not response_data['schedule'] or not response_data['schedule'].get('response'):
                         response_data['error_message'] = "Tidak ada pertandingan untuk tim ini atau terjadi kesalahan mengambil data."
 
-            # ... rest of your existing route handler code ...
+            elif 'match_choice' in request.form:
+                user_choice = request.form.get("match_choice")
+                match_data = MatchDataProcessor.get_match_data(user_choice)
+                prediction_generator = PredictionGenerator()
+                response_data['prediction_result'] = await prediction_generator.get_prediction(
+                    match_data, user_choice
+                )
+
+            elif 'user_prompt' in request.form:
+                user_prompt = request.form.get("user_prompt")
+                if user_prompt:
+                    prediction_generator = PredictionGenerator()
+                    response_data['prediction_result'] = await prediction_generator.get_prediction(
+                        user_prompt, "Custom Query"
+                    )
 
         except Exception as e:
             logger.error(f"Error in route handler: {str(e)}")

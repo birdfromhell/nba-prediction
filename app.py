@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from functools import lru_cache
 import requests
-from poe_api_wrapper import AsyncPoeApi
+from poe_api_wrapper import AsyncPoeApi,PoeApi
 from datetime import datetime, timedelta
 import json
 import asyncio
@@ -25,6 +25,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+user_client = PoeApi(tokens={"p-b": os.getenv("POE_TOKEN_P_B"), "p-lat": os.getenv("POE_TOKEN_P_LAT")})
 app = Flask(__name__)
 app.wsgi_app = WhiteNoise(app.wsgi_app, root="static/")
 
@@ -329,7 +330,8 @@ Analisis Lah Berdasarkan Data Diatas
                         retries += 1
                         if retries < Config.MAX_RETRIES:
                             logger.warning(
-                                f"Rate limit hit, waiting {Config.RETRY_DELAY} seconds. Retry {retries}/{Config.MAX_RETRIES}"
+                                "Rate limit hit, waiting %s seconds. Retry %d/%d",
+                                Config.RETRY_DELAY, retries, Config.MAX_RETRIES
                             )
                             await asyncio.sleep(Config.RETRY_DELAY)
                             continue
@@ -397,6 +399,7 @@ async def index():
         "current_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "filter_type": "date",  # Default filter type
     }
+    
 
     if request.method == "POST":
         try:
@@ -515,6 +518,11 @@ async def health_check():
 @app.route("/manifest.json")
 def serve_manifest():
     return send_file("manifest.json", mimetype="application/manifest+json")
+
+@app.route("/api-info")
+def get_token():
+    return jsonify({"data": user_client.get_settings()})
+    
 
 
 if __name__ == "__main__":

@@ -42,58 +42,101 @@
         </div>
         {% endif %}
 
-        {% if start_message %}
-        <div class="message bot">
-            <div class="message-content">
-                {{ start_message }}
-                <div class="date-input">
-                    <form method="POST">
-                        <input type="date" name="date" required>
-                        <button type="submit" class="btn">
-                            <i class="fas fa-calendar-alt"></i>
-                            Lihat Jadwal
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        {% endif %}
 
-        {% if date_message %}
-        <div class="message bot">
-            <div class="message-content">
-                {{ date_message }}
-            </div>
+{% if start_message %}
+<div class="message bot">
+    <div class="message-content">
+        {{ start_message }}
+        <div class="filter-options">
+            <form method="POST" class="filter-form">
+                <input type="hidden" name="filter_type" value="date">
+                <button type="submit" class="btn filter-btn">
+                    <i class="fas fa-calendar-alt"></i>
+                    Cari berdasarkan Tanggal
+                </button>
+            </form>
+            <form method="POST" class="filter-form">
+                <input type="hidden" name="filter_type" value="team">
+                <button type="submit" class="btn filter-btn">
+                    <i class="fas fa-users"></i>
+                    Cari berdasarkan Tim
+                </button>
+            </form>
         </div>
-        {% endif %}
+    </div>
+</div>
+{% endif %}
 
-        {% if schedule %}
-        <div class="message bot">
-            <div class="message-content">
-                <div class="match-list">
-                    {% for game in schedule.response %}
-                    <div class="match-item">
-                        <div class="teams">
-                            <div class="team">
-                                <img src="{{ game.teams.home.logo }}" alt="{{ game.teams.home.name }}" class="team-logo">
-                                <span>{{ game.teams.home.name }}</span>
-                            </div>
-                            <span class="vs">vs</span>
-                            <div class="team">
-                                <img src="{{ game.teams.visitors.logo }}" alt="{{ game.teams.visitors.name }}" class="team-logo">
-                                <span>{{ game.teams.visitors.name }}</span>
-                            </div>
-                        </div>
-                        <form method="POST">
-                            <input type="hidden" name="match_choice" value="{{ game.teams.home.name }} vs {{ game.teams.visitors.name }}">
-                            <button type="submit" class="btn">Dapatkan Prediksi</button>
-                        </form>
-                    </div>
+{% if filter_type == 'date' and date_message %}
+<div class="message bot">
+    <div class="message-content">
+        {{ date_message }}
+        <div class="date-input">
+            <form method="POST">
+                <input type="date" name="date" required>
+                <button type="submit" class="btn">
+                    <i class="fas fa-calendar-alt"></i>
+                    Lihat Jadwal
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if filter_type == 'team' and team_message and teams %}
+<div class="message bot">
+    <div class="message-content">
+        {{ team_message }}
+        <div class="team-input">
+            <form method="POST">
+                <select name="team_id" required class="team-select">
+                    <option value="">Pilih Tim</option>
+                    {% for team in teams %}
+                    <option value="{{ team.id }}">{{ team.name }}</option>
                     {% endfor %}
-                </div>
-            </div>
+                </select>
+                <button type="submit" class="btn">
+                    <i class="fas fa-search"></i>
+                    Lihat Jadwal
+                </button>
+            </form>
         </div>
-        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if schedule %}
+<div class="message bot">
+    <div class="message-content">
+        <div class="match-list">
+            {% for game in schedule.response %}
+            <div class="match-item">
+                <div class="match-date">
+                    <i class="fas fa-calendar"></i>
+                    {{ game.date.start|format_date }}
+                </div>
+                <div class="teams">
+                    <div class="team">
+                        <img src="{{ game.teams.home.logo }}" alt="{{ game.teams.home.name }}" class="team-logo">
+                        <span>{{ game.teams.home.name }}</span>
+                    </div>
+                    <span class="vs">vs</span>
+                    <div class="team">
+                        <img src="{{ game.teams.visitors.logo }}" alt="{{ game.teams.visitors.name }}" class="team-logo">
+                        <span>{{ game.teams.visitors.name }}</span>
+                    </div>
+                </div>
+                <form method="POST">
+                    <input type="hidden" name="match_choice" value="{{ game.teams.home.name }} vs {{ game.teams.visitors.name }}">
+                    <button type="submit" class="btn">Dapatkan Prediksi</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
 
         {% if prediction_result %}
         <div class="message bot">

@@ -64,6 +64,7 @@ jupyterlab_pygments==0.3.0
 jupyterlab_server==2.27.3
 kiwisolver==1.4.7
 loguru==0.7.2
+Markdown==3.7
 markdown-it-py==2.2.0
 MarkupSafe==3.0.2
 matplotlib==3.9.2
@@ -141,5 +142,5 @@ webcolors==24.8.0
 webencodings==0.5.1
 websocket-client==1.8.0
 Werkzeug==3.0.5
-wsproto==1.2.0
 whitenoise==6.7.0
+wsproto==1.2.0

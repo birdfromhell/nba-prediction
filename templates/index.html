@@ -26,9 +26,8 @@
         </div>
     </div>
 
-
     <div class="chat-container" id="chatContainer">
-        {% if not start_message and not date_message %}
+        {% if not start_message and not date_message and not schedule %}
         <div class="message bot">
             <div class="message-content">
                 <form method="POST">
@@ -46,6 +45,30 @@
         <div class="message bot">
             <div class="message-content">
                 {{ start_message }}
+                <div class="filter-options">
+                    <form method="POST" class="filter-form">
+                        <input type="hidden" name="filter_type" value="date">
+                        <button type="submit" class="btn filter-btn">
+                            <i class="fas fa-calendar-alt"></i>
+                            Cari berdasarkan Tanggal
+                        </button>
+                    </form>
+                    <form method="POST" class="filter-form">
+                        <input type="hidden" name="filter_type" value="team">
+                        <button type="submit" class="btn filter-btn">
+                            <i class="fas fa-users"></i>
+                            Cari berdasarkan Tim
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if filter_type == 'date' and date_message %}
+        <div class="message bot">
+            <div class="message-content">
+                {{ date_message }}
                 <div class="date-input">
                     <form method="POST">
                         <input type="date" name="date" required>
@@ -59,10 +82,24 @@
         </div>
         {% endif %}
 
-        {% if date_message %}
+        {% if filter_type == 'team' and team_message and teams %}
         <div class="message bot">
             <div class="message-content">
-                {{ date_message }}
+                {{ team_message }}
+                <div class="team-input">
+                    <form method="POST">
+                        <select name="team_id" required class="team-select">
+                            <option value="">Pilih Tim</option>
+                            {% for team in teams %}
+                            <option value="{{ team.id }}">{{ team.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-search"></i>
+                            Lihat Jadwal
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
         {% endif %}
@@ -73,6 +110,10 @@
                 <div class="match-list">
                     {% for game in schedule.response %}
                     <div class="match-item">
+                        <div class="match-date">
+                            <i class="fas fa-calendar"></i>
+                            {{ game.date.start|format_date }}
+                        </div>
                         <div class="teams">
                             <div class="team">
                                 <img src="{{ game.teams.home.logo }}" alt="{{ game.teams.home.name }}" class="team-logo">
@@ -118,22 +159,20 @@
         </div>
     </div>
 
-    <!-- Bagian HTML tetap sama hingga bagian script -->
-
-<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
-<script>
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/static/service-worker.js')
-            .then((registration) => {
-                console.log('Service Worker registered with scope:', registration.scope);
-            })
-            .catch((error) => {
-                console.error('Service Worker registration failed:', error);
-            });
-    });
-}
-</script>
-<script src='/static/service-worker.js'></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/static/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch((error) => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        });
+    }
+    </script>
+    <script src='/static/service-worker.js'></script>
 </body>
 </html>

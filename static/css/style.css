@@ -379,3 +379,77 @@ button {
     text-align: right;
     font-size: 14px;
 }
+/* Add these styles to your existing CSS */
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.filter-form {
+    width: 100%;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.team-input {
+    background: var(--input-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin: 1rem 0;
+}
+
+.team-select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: var(--input-bg);
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.team-select:focus {
+    border-color: var(--user-message-bg);
+    outline: none;
+}
+
+@media (min-width: 768px) {
+    .filter-options {
+        flex-direction: row;
+    }
+    
+    .filter-form {
+        width: 50%;
+    }
+}
+.match-date {
+    font-size: 0.9em;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.8;
+}
+
+.match-date i {
+    font-size: 0.9em;
+}
+
+.match-item {
+    padding: 15px;
+    border-radius: 8px;
+    background: var(--message-bg);
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

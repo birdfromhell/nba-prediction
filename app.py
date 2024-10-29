@@ -31,6 +31,17 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 app.wsgi_app = WhiteNoise(app.wsgi_app, root="static/")
 
+@app.template_filter('format_date')
+def format_date(date_string):
+    try:
+        if isinstance(date_string, str):
+            date = datetime.fromisoformat(date_string.replace('Z', '+00:00'))
+            return date.strftime('%d %b %Y')  # Format: 25 Oct 2024
+        return date_string
+    except Exception as e:
+        logger.error(f"Error formatting date: {str(e)}")
+        return date_string
+
 # Configuration
 class Config:
     NBA_API_KEY = os.getenv('NBA_API_KEY', 'fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3')
@@ -45,9 +56,6 @@ class Config:
     MAX_RETRIES = 3
     RETRY_DELAY = 5  # seconds
 
-class APIError(Exception):
-    """Custom exception for API related errors"""
-    pass
 
 # Rate limiting decorators
 @sleep_and_retry
@@ -75,7 +83,42 @@ def get_nba_schedule(date: str) -> Optional[Dict]:
     except (requests.RequestException, APIError) as e:
         logger.error(f"Error fetching NBA schedule: {str(e)}")
         return None
+@lru_cache(maxsize=1)
+def get_nba_teams() -> Optional[Dict]:
+    """Get NBA teams from the API with caching"""
+    url = "https://api-nba-v1.p.rapidapi.com/teams"
+    headers = {
+        "x-rapidapi-key": Config.NBA_API_KEY,
+        "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
+    }
+    
+    try:
+        response = rate_limited_api_call(url, headers=headers, params={})
+        logger.info("Successfully fetched NBA teams")
+        return response.json()
+    except (requests.RequestException, APIError) as e:
+        logger.error(f"Error fetching NBA teams: {str(e)}")
+        return None
 
+def get_team_schedule(team_id: str) -> Optional[Dict]:
+    """Get NBA schedule for a specific team"""
+    url = "https://api-nba-v1.p.rapidapi.com/games"
+    headers = {
+        "x-rapidapi-key": Config.NBA_API_KEY,
+        "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
+    }
+    params = {
+        "season": "2024",  # Current season
+        "team": team_id
+    }
+    
+    try:
+        response = rate_limited_api_call(url, headers=headers, params=params)
+        logger.info(f"Successfully fetched schedule for team {team_id}")
+        return response.json()
+    except (requests.RequestException, APIError) as e:
+        logger.error(f"Error fetching team schedule: {str(e)}")
+        return None
 class MatchDataProcessor:
     """Class to handle match data processing"""
     
@@ -322,20 +365,36 @@ Analisis Lah Berdasarkan Data Diatas
 
 @app.route("/", methods=["GET", "POST"])
 async def index():
-    """Main route handler with improved error handling and response structure"""
+    """Modified route handler with team-based filtering"""
     response_data = {
         'schedule': None,
         'prediction_result': None,
         'start_message': None,
         'date_message': None,
+        'team_message': None,
         'error_message': None,
-        'current_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        'teams': None,
+        'current_time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        'filter_type': 'date'  # Default filter type
     }
 
     if request.method == "POST":
         try:
             if 'start' in request.form:
-                response_data['start_message'] = "Selamat datang! Silakan masukkan tanggal (YYYY-MM-DD) untuk melihat jadwal pertandingan NBA."
+                response_data['start_message'] = "Selamat datang! Silakan pilih metode pencarian jadwal:"
+                teams_data = get_nba_teams()
+                if teams_data and 'response' in teams_data:
+                    response_data['teams'] = teams_data['response']
+
+            elif 'filter_type' in request.form:
+                response_data['filter_type'] = request.form.get('filter_type')
+                teams_data = get_nba_teams()
+                if teams_data and 'response' in teams_data:
+                    response_data['teams'] = teams_data['response']
+                if response_data['filter_type'] == 'team':
+                    response_data['team_message'] = "Pilih tim untuk melihat jadwal:"
+                else:
+                    response_data['date_message'] = "Masukkan tanggal untuk melihat jadwal:"
 
             elif 'date' in request.form:
                 date = request.form.get("date")
@@ -344,24 +403,18 @@ async def index():
                     response_data['schedule'] = get_nba_schedule(date)
                     if not response_data['schedule'] or not response_data['schedule'].get('response'):
                         response_data['error_message'] = "Tidak ada pertandingan pada tanggal tersebut atau terjadi kesalahan mengambil data."
-                else:
-                    response_data['error_message'] = "Mohon masukkan tanggal yang valid."
 
-            elif 'match_choice' in request.form:
-                user_choice = request.form.get("match_choice")
-                match_data = MatchDataProcessor.get_match_data(user_choice)
-                prediction_generator = PredictionGenerator()
-                response_data['prediction_result'] = await prediction_generator.get_prediction(
-                    match_data, user_choice
-                )
+            elif 'team_id' in request.form:
+                team_id = request.form.get("team_id")
+                if team_id:
+                    teams_data = get_nba_teams()
+                    team_name = next((team['name'] for team in teams_data['response'] if str(team['id']) == team_id), None)
+                    response_data['team_message'] = f"Jadwal pertandingan untuk {team_name}:"
+                    response_data['schedule'] = get_team_schedule(team_id)
+                    if not response_data['schedule'] or not response_data['schedule'].get('response'):
+                        response_data['error_message'] = "Tidak ada pertandingan untuk tim ini atau terjadi kesalahan mengambil data."
 
-            elif 'user_prompt' in request.form:
-                user_prompt = request.form.get("user_prompt")
-                if user_prompt:
-                    prediction_generator = PredictionGenerator()
-                    response_data['prediction_result'] = await prediction_generator.get_prediction(
-                        user_prompt, "Custom Query"
-                    )
+            # ... rest of your existing route handler code ...
 
         except Exception as e:
             logger.error(f"Error in route handler: {str(e)}")

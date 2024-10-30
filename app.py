@@ -30,7 +30,7 @@ class Config:
     SEARCH_API_KEY = os.getenv(
         "SEARCH_API_KEY", "fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3"
     )
-    BASE_URL = "https://api.aimlapi.com/v1"
+    BASE_URL = "https://api.together.xyz/v1"
     API_KEY = os.getenv("AI_API_KEY", "my_key")
     CACHE_TIMEOUT = 3600  # 1 hour
     CALLS_PER_MINUTE = 30

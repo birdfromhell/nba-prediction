@@ -186,7 +186,7 @@ class AimlClientManager:
         """Query the API with a prompt and return the response"""
         try:
             completion = self.api.chat.completions.create(
-                model="mistralai/Mistral-7B-Instruct-v0.2",  # Model yang Anda sebutkan
+                model=os.getenv('DEFAULT_MODEL'),  # Model yang Anda sebutkan
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}

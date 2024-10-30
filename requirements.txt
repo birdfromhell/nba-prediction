@@ -143,3 +143,4 @@ websocket-client==1.8.0
 Werkzeug==3.0.5
 wsproto==1.2.0
 whitenoise==6.7.0
+openai==1.52.2

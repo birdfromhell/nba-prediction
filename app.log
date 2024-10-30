@@ -14426,3 +14426,183 @@ jinja2.exceptions.TemplateSyntaxError: unexpected '%'
 2024-10-30 04:08:22,065 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:22] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
 2024-10-30 04:08:22,213 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:22] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
 2024-10-30 04:08:22,332 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 04:08:22] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:09:56,430 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 06:09:56,828 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-cdd957f1764b1da3.js "HTTP/1.1 200 OK"
+2024-10-30 06:09:56,872 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-2e2a4e1d5d248cd9.js "HTTP/1.1 200 OK"
+2024-10-30 06:09:56,923 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/mO1Zgda28-xdNFZH0rlou/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 06:09:57,218 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 06:09:58,086 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 06:09:58,597 - websocket - INFO - Websocket connected
+2024-10-30 06:09:58,608 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 06:09:58,608 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 06:10:03,792 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/asgiref/sync.py", line 254, in __call__
+    return call_result.result()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/asgiref/sync.py", line 331, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/app.py", line 488, in index
+    return render_template("index.html", **response_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/nba-prediction/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2024-10-30 06:10:03,797 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:03] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-10-30 06:10:38,026 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 06:10:38,100 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-cdd957f1764b1da3.js "HTTP/1.1 200 OK"
+2024-10-30 06:10:38,162 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-2e2a4e1d5d248cd9.js "HTTP/1.1 200 OK"
+2024-10-30 06:10:38,218 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/mO1Zgda28-xdNFZH0rlou/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 06:10:39,022 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 06:10:39,801 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 06:10:40,310 - websocket - INFO - Websocket connected
+2024-10-30 06:10:40,322 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 06:10:40,322 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 06:10:42,429 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:42] "GET / HTTP/1.1" 200 -
+2024-10-30 06:10:42,711 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:42] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:10:42,742 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:42] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:10:42,954 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:42] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:10:44,611 - app - INFO - Successfully fetched NBA teams
+2024-10-30 06:10:44,613 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:44] "POST / HTTP/1.1" 200 -
+2024-10-30 06:10:44,676 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:44] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:10:44,677 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:44] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:10:44,724 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:44] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:10:46,469 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:46] "POST / HTTP/1.1" 200 -
+2024-10-30 06:10:46,534 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:46] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:10:46,701 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:46] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:10:46,746 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:46] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:10:49,105 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:49] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:10:50,265 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:50] "POST / HTTP/1.1" 200 -
+2024-10-30 06:10:50,327 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:50] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:10:50,331 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:50] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:10:50,373 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:50] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:10:55,852 - app - INFO - Successfully fetched NBA schedule for 2024-10-31
+2024-10-30 06:10:55,853 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:55] "POST / HTTP/1.1" 200 -
+2024-10-30 06:10:55,930 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:55] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:10:55,931 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:55] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:10:55,996 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:10:55] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:11:05,212 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 06:11:05,281 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-cdd957f1764b1da3.js "HTTP/1.1 200 OK"
+2024-10-30 06:11:05,316 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-2e2a4e1d5d248cd9.js "HTTP/1.1 200 OK"
+2024-10-30 06:11:05,363 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/mO1Zgda28-xdNFZH0rlou/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 06:11:05,630 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 06:11:06,602 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 06:11:07,117 - websocket - INFO - Websocket connected
+2024-10-30 06:11:07,119 - app - INFO - Poe client initialized successfully
+2024-10-30 06:11:07,598 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 06:11:11,227 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 06:11:35,530 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:11:35] "POST / HTTP/1.1" 200 -
+2024-10-30 06:11:35,641 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:11:35] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:11:35,643 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:11:35] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:11:35,714 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:11:35] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:13:10,905 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:10] "POST / HTTP/1.1" 200 -
+2024-10-30 06:13:11,162 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:11] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-10-30 06:13:11,219 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:11] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:13:11,424 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:11] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:13:27,605 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:27] "POST / HTTP/1.1" 200 -
+2024-10-30 06:13:27,689 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:27] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:13:27,690 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:27] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:13:27,807 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:27] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:13:40,238 - app - INFO - Successfully fetched NBA schedule for 2024-10-31
+2024-10-30 06:13:40,239 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:40] "POST / HTTP/1.1" 200 -
+2024-10-30 06:13:40,376 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:40] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:13:40,521 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:40] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:13:40,638 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:13:40] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:02,741 - app - WARNING - Error with primary bot, trying fallback: Sending request HandleBotLandingPageQuery failed.  Error log: RuntimeError('Event loop is closed')
+2024-10-30 06:14:03,199 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 06:14:03,200 - app - ERROR - Error generating prediction: 'NoneType' object is not subscriptable
+2024-10-30 06:14:03,201 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:03] "POST / HTTP/1.1" 200 -
+2024-10-30 06:14:03,276 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:03] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-10-30 06:14:03,283 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:03] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:03,343 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:03] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:21,563 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:21] "POST / HTTP/1.1" 200 -
+2024-10-30 06:14:21,641 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:21] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:21,641 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:21] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:14:21,699 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:21] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:22,908 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:22] "POST / HTTP/1.1" 200 -
+2024-10-30 06:14:22,987 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:22] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:22,989 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:22] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:14:23,048 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:23] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:30,388 - app - INFO - Successfully fetched NBA schedule for 2024-10-31
+2024-10-30 06:14:30,389 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:30] "POST / HTTP/1.1" 200 -
+2024-10-30 06:14:30,460 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:30] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:14:30,461 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:30] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:30,528 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:30] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:33,935 - app - WARNING - Error with primary bot, trying fallback: Sending request HandleBotLandingPageQuery failed.  Error log: RuntimeError('Event loop is closed')
+2024-10-30 06:14:34,413 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 06:14:34,414 - app - ERROR - Error generating prediction: 'NoneType' object is not subscriptable
+2024-10-30 06:14:34,415 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:34] "POST / HTTP/1.1" 200 -
+2024-10-30 06:14:34,483 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:34] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:14:34,484 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:34] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:34,528 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:34] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:38,716 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:38] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:48,457 - app - WARNING - Error with primary bot, trying fallback: Timed out waiting for other messages to send.
+2024-10-30 06:14:53,545 - app - ERROR - Error generating prediction: Timed out waiting for other messages to send.
+2024-10-30 06:14:53,546 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:53] "POST / HTTP/1.1" 200 -
+2024-10-30 06:14:53,641 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:53] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:14:53,645 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:53] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:14:53,707 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:14:53] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:15:30,704 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:30] "POST / HTTP/1.1" 200 -
+2024-10-30 06:15:30,774 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:30] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-10-30 06:15:30,775 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:30] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:15:30,830 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:30] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:15:31,774 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:31] "POST / HTTP/1.1" 200 -
+2024-10-30 06:15:31,846 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:31] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:15:31,852 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:31] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:15:31,905 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:31] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:15:38,227 - app - INFO - Successfully fetched NBA schedule for 2024-10-31
+2024-10-30 06:15:38,228 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:38] "POST / HTTP/1.1" 200 -
+2024-10-30 06:15:38,305 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:38] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:15:38,306 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:38] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:15:38,388 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:38] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:15:54,172 - app - WARNING - Error with primary bot, trying fallback: Timed out waiting for other messages to send.
+2024-10-30 06:15:59,254 - app - ERROR - Error generating prediction: Timed out waiting for other messages to send.
+2024-10-30 06:15:59,255 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:59] "POST / HTTP/1.1" 200 -
+2024-10-30 06:15:59,342 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:59] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:15:59,343 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:15:59,402 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:15:59] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:16:58,384 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:16:58] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:17:07,230 - app - WARNING - Error with primary bot, trying fallback: Timed out waiting for other messages to send.
+2024-10-30 06:17:12,313 - app - ERROR - Error generating prediction: Timed out waiting for other messages to send.
+2024-10-30 06:17:12,314 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:17:12] "POST / HTTP/1.1" 200 -
+2024-10-30 06:17:12,390 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:17:12] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 06:17:12,575 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:17:12] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 06:17:12,666 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 06:17:12] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -

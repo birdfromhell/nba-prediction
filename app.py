@@ -125,12 +125,15 @@ class MatchDataProcessor:
     """Class to handle match data processing"""
 
     PRIORITY_DOMAINS = {
-        "nba.com": 5,
+        "nba.com": 3,
         "espn.com": 4,
         "basketball-reference.com": 4,
         "aiscore.com": 3,
-        "landofbasketball.com": 3,
+        "landofbasketball.com": 5,
         "sofascore.com": 4,
+        "sports.yahoo.com": 4,
+        "foxsports.com": 3,
+        "www.statmuse.com": 4,
     }
 
     @staticmethod

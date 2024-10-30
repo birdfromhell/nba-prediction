@@ -14066,3 +14066,59 @@ AttributeError: type object 'PoeClientManager' has no attribute 'get_settings'
 2024-10-29 08:58:29,180 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:58:29] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
 2024-10-29 08:58:29,184 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:58:29] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
 2024-10-29 08:58:29,237 - werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:58:29] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-29 09:28:03,497 - websocket - ERROR - Connection to remote host was lost. - goodbye
+2024-10-29 09:28:03,799 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-29 09:28:04,526 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-29 09:28:05,040 - websocket - INFO - Websocket connected
+2024-10-29 09:28:27,806 - websocket - ERROR - Connection to remote host was lost. - goodbye
+2024-10-30 02:32:01,601 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 02:32:01,767 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 02:32:01,841 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-6eb1c6050caaded7.js "HTTP/1.1 200 OK"
+2024-10-30 02:32:01,913 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/L75GPcXOmqPwnDB9OTehg/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 02:32:02,193 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 02:32:04,371 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 02:32:04,890 - websocket - INFO - Websocket connected
+2024-10-30 02:32:04,935 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-30 02:32:04,936 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-10-30 02:32:06,063 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:06] "GET / HTTP/1.1" 200 -
+2024-10-30 02:32:06,604 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:06] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 02:32:06,809 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 02:32:06,810 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:06] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 02:32:07,199 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-30 02:32:07,215 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:07] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 02:32:22,734 - app - INFO - Successfully fetched NBA teams
+2024-10-30 02:32:22,746 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:22] "POST / HTTP/1.1" 200 -
+2024-10-30 02:32:22,814 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 02:32:22,816 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:22] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 02:32:22,831 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:22] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 02:32:22,903 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:22] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 02:32:25,307 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:25] "POST / HTTP/1.1" 200 -
+2024-10-30 02:32:25,384 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:25] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 02:32:25,395 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:25] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 02:32:25,398 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 02:32:25,471 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:25] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 02:32:38,402 - app - INFO - Successfully fetched NBA schedule for 2024-10-30
+2024-10-30 02:32:38,406 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:38] "POST / HTTP/1.1" 200 -
+2024-10-30 02:32:38,579 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 02:32:38,582 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:38] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 02:32:38,586 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:38] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 02:32:38,710 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:38] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 02:32:47,099 - httpx - INFO - HTTP Request: GET https://poe.com "HTTP/2 200 OK"
+2024-10-30 02:32:47,167 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/webpack-5b0fe9ff25d7b9f7.js "HTTP/1.1 200 OK"
+2024-10-30 02:32:47,217 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/chunks/pages/_app-6eb1c6050caaded7.js "HTTP/1.1 200 OK"
+2024-10-30 02:32:47,271 - httpx - INFO - HTTP Request: GET https://psc2.cf2.poecdn.net/assets/_next/static/L75GPcXOmqPwnDB9OTehg/_buildManifest.js "HTTP/1.1 200 OK"
+2024-10-30 02:32:47,607 - httpx - INFO - HTTP Request: GET https://poe.com/api/settings "HTTP/2 200 OK"
+2024-10-30 02:32:48,569 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 02:32:49,071 - websocket - INFO - Websocket connected
+2024-10-30 02:32:49,079 - app - INFO - Poe client initialized successfully
+2024-10-30 02:32:49,597 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 02:32:59,099 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 02:32:59,101 - app - WARNING - Error with primary bot, trying fallback: Sending request SendMessageMutation failed. status_code:200,  Error log: JSONDecodeError('Input is a zero-length, empty document: line 1 column 1 (char 0)')
+2024-10-30 02:32:59,518 - httpx - INFO - HTTP Request: POST https://poe.com/api/gql_POST "HTTP/2 200 OK"
+2024-10-30 02:32:59,518 - app - ERROR - Error generating prediction: 'NoneType' object is not subscriptable
+2024-10-30 02:32:59,519 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:59] "POST / HTTP/1.1" 200 -
+2024-10-30 02:32:59,627 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-10-30 02:32:59,628 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:59] "[33mGET /static/service-worker.js HTTP/1.1[0m" 404 -
+2024-10-30 02:32:59,629 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2024-10-30 02:32:59,676 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2024 02:32:59] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -

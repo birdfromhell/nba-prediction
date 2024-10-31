@@ -7,7 +7,8 @@ from ratelimit import limits, sleep_and_retry
 import os
 from dotenv import load_dotenv
 from typing import Optional, Dict, List
-from openai import OpenAI
+import aiohttp
+import asyncio
 
 # Load environment variables
 load_dotenv()
@@ -30,8 +31,7 @@ class Config:
     SEARCH_API_KEY = os.getenv(
         "SEARCH_API_KEY", "fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3"
     )
-    BASE_URL = "https://api.together.xyz/v1"
-    API_KEY = os.getenv("AI_API_KEY", "my_key")
+    API_KEY = os.getenv("RAPIDAPI_KEY", "fe7ac125c5msh94f9c196609b1eep12fb18jsndc6f9e5920c3")
     CACHE_TIMEOUT = 3600  # 1 hour
     CALLS_PER_MINUTE = 30
     MAX_RETRIES = 3
@@ -40,7 +40,6 @@ class Config:
 
 class APIError(Exception):
     """Custom exception for API related errors"""
-
     pass
 
 
@@ -187,24 +186,42 @@ class MatchDataProcessor:
 
 
 class AimlClientManager:
-    """Class to manage API client using the specified base_url and api_key"""
+    """Class to manage API client using RapidAPI ChatGPT endpoint"""
 
     def __init__(self):
-        self.api = OpenAI(api_key=Config.API_KEY, base_url=Config.BASE_URL)
+        self.url = "https://chatgpt-42.p.rapidapi.com/gpt4"
+        self.headers = {
+            "x-rapidapi-key": Config.API_KEY,
+            "x-rapidapi-host": "chatgpt-42.p.rapidapi.com",
+            "Content-Type": "application/json"
+        }
 
     async def get_prediction(self, system_prompt: str, user_prompt: str) -> str:
-        """Query the API with a prompt and return the response"""
+        """Query the RapidAPI ChatGPT endpoint with a prompt and return the response"""
         try:
-            completion = self.api.chat.completions.create(
-                model=os.getenv("DEFAULT_MODEL"),
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
+            payload = {
+                "messages": [
+                    {
+                        "role": "system",
+                        "content": system_prompt
+                    },
+                    {
+                        "role": "user",
+                        "content": user_prompt
+                    }
                 ],
-                temperature=0.7,
-                max_tokens=256,
-            )
-            return completion.choices[0].message.content
+                "web_access": False
+            }
+
+            async with aiohttp.ClientSession() as session:
+                async with session.post(self.url, json=payload, headers=self.headers) as response:
+                    if response.status == 200:
+                        result = await response.json()
+                        return result.get('result', 'No response generated')
+                    else:
+                        logger.error(f"API call failed with status {response.status}")
+                        return "Maaf, terjadi kesalahan saat menghasilkan prediksi. Silakan coba lagi nanti."
+
         except Exception as e:
             logger.error(f"Error in API call: {str(e)}")
             return "Maaf, terjadi kesalahan saat menghasilkan prediksi. Silakan coba lagi nanti."
